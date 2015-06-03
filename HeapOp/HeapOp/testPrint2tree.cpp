@@ -73,7 +73,7 @@ void print2tree(vector<int> v) {
 		}
 		cout<<endl;
 	}
-	for(int i=(int)pow(2.0,Depth-1)-1;i<n+1;i++)
+	for(int i=(int)pow(2.0,Depth-1);i<n+1;i++)
 	{
 		cout<<"    "<<v[i]<<'\t';
 	}
