@@ -9,7 +9,7 @@ using namespace std;
 
 class Heap
 {
-private:
+protected:
 
     int N;
     vector<int> hp;
@@ -26,16 +26,17 @@ private:
 
 public:
 
+	Heap(){};
 	Heap(vector<int> hp);
     Heap(vector<int> hp,int N);
 
 	vector<int> gethp(){return hp;}
 	int getN(){return N;}
 
-    void swim(int k);
-    void sink(int k);
-	void insert(int key);
-	int delMax();
+    virtual void swim(int k);
+    virtual void sink(int k);
+	virtual void insert(int key);
+	virtual int delMax();
 };
 void print2tree(int s[],int n);
 void print2tree(vector<int> v);

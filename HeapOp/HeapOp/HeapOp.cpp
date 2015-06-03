@@ -1,7 +1,8 @@
 #include <HeapOp.h>
 
 Heap::Heap(vector<int> hp)
-{
+{	
+//	hp.push_back(-1);
 	this->hp=hp;
 	this->N=hp.size()-1;
 }
@@ -49,6 +50,7 @@ int Heap::delMax()
 	return max;
 }
 
+/*
 int main()
 {
 	vector<int> v;
@@ -69,3 +71,4 @@ int main()
 	system("pause");
 	return 1;
 }
+*/

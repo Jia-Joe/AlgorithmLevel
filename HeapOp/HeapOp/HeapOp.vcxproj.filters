@@ -29,5 +29,8 @@
     <ClCompile Include="PriorityQueue.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="heap_sort.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
