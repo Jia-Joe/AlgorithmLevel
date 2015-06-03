@@ -1,15 +1,7 @@
 #include <HeapOp.h>
 
-bool Heap::less(int i,int j)
-{
-	return hp[i]<hp[j];
-}
-void Heap::exch(int i,int j)
-{
-    int t=hp[i];
-    hp[i]=hp[j];
-    hp[j]=t;
-}
+
+
 
 Heap::Heap(vector<int> hp)
 {
@@ -36,7 +28,7 @@ void Heap::sink(int k)
     {
         int j=2*k;
         if(j<N && less(k,k+1)) j++;
-        if(!less(k,j));
+        if(!less(k,j))
             break;
         exch(k,j);
         k=j;
@@ -59,14 +51,14 @@ int Heap::delMax()
 }
 
 
-#include <stdio.h>
-int main()
-{
-	vector<int> v;
-	enum{}
-	v[0]=-1;v[1]='a';
-	int N=12;
-	Heap myhp(v,N);
-	system("pause");
-	return 1;
-}
+//#include <stdio.h>
+//int main()
+//{
+//	vector<int> v;
+//	enum{};
+//	v[0]=-1;v[1]='a';
+//	int N=12;
+//	Heap myhp(v,N);
+//	system("pause");
+//	return 1;
+//}

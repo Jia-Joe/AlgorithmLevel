@@ -9,8 +9,16 @@ class Heap
 
     int N;
     vector<int> hp;
-    bool less(int i,int j);
-    void exch(int i,int j);
+	bool less(int i,int j)
+	{
+		return hp[i]<hp[j];
+	}
+    void exch(int i,int j)
+	{
+		int t=hp[i];
+		hp[i]=hp[j];
+		hp[j]=t;
+	}
 
     public:
 
@@ -20,7 +28,7 @@ class Heap
     void sink(int k);
 	void insert(int key);
 	int delMax();
-}
+};
 
 
 #endif
