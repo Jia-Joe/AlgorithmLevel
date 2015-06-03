@@ -1,11 +1,15 @@
 #ifndef _HEAPOP_H
 #define _HEAPOP_H
-
+#include<math.h>
+#include<iostream>
+#include<stack>
+#include<assert.h>
 #include<vector>
 using namespace std;
+
 class Heap
 {
-    private:
+private:
 
     int N;
     vector<int> hp;
@@ -20,15 +24,21 @@ class Heap
 		hp[j]=t;
 	}
 
-    public:
+public:
 
 	Heap(vector<int> hp);
     Heap(vector<int> hp,int N);
+
+	vector<int> gethp(){return hp;}
+	int getN(){return N;}
+
     void swim(int k);
     void sink(int k);
 	void insert(int key);
 	int delMax();
 };
+void print2tree(int s[],int n);
+void print2tree(vector<int> v);
 
 
 #endif

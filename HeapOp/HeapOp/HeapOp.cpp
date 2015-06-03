@@ -1,8 +1,5 @@
 #include <HeapOp.h>
 
-
-
-
 Heap::Heap(vector<int> hp)
 {
 	this->hp=hp;
@@ -50,15 +47,20 @@ int Heap::delMax()
 	return max;
 }
 
+int main()
+{
+	vector<int> v;
+	int x[12]={1,2,3,4,5,6,7,8,9,10,11,12};
+	v.push_back(-1);
+	for(int i=0;i<12;i++) {
+		v.push_back(x[i]);
+	}
+	Heap myhp(v);
+	print2tree(myhp.gethp());
 
-//#include <stdio.h>
-//int main()
-//{
-//	vector<int> v;
-//	enum{};
-//	v[0]=-1;v[1]='a';
-//	int N=12;
-//	Heap myhp(v,N);
-//	system("pause");
-//	return 1;
-//}
+	myhp.insert(10);
+	cout<<endl<<endl;
+	print2tree(myhp.gethp());
+	system("pause");
+	return 1;
+}

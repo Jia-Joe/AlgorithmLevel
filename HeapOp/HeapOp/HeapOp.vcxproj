@@ -66,6 +66,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="HeapOp.cpp" />
+    <ClCompile Include="PriorityQueue.cpp" />
     <ClCompile Include="testPrint2tree.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
