@@ -43,7 +43,7 @@ int main()
 	sinksort myst(v);
 	myst.sksort();
 	print2tree(myst.gethp());
-
+	myst.gethp().~vector();
 	system("pause");
 	return 1;
 }
