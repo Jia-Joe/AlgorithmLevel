@@ -1,26 +1,11 @@
-#include <iostream>
-#include <string>
-#include <vector>
-#include <map>
-#include <iomanip>
+#include <assignment.h>
 
-using namespace std;
-
-int n,m;           //n——参与组合元素个数，m——每个组合中元素个数
-int *p;           //存放组合元素的数组  
-
-//void Print()                     
-//{
-//	for(int i=0;i<m;i++)
-//	cout<<setw(1)<<char(p[i]+64);
-//	cout<<setw(1)<<p[i];
-//	cout<<endl;
-//}
-
-
+//n——参与组合元素个数
+//m——每个组合中元素个数
+//p——存放组合元素的数组
 static bool flag=true;
 static int mt;
-vector<vector<int> >  Comb(int n,int m)   //递归求组合
+vector<vector<int> >  Comb0(int n,int m,int *p)   //递归求组合, 
 {
 	static vector<vector<int> > comb;
 	if(m==0||m>n)
@@ -50,7 +35,7 @@ vector<vector<int> >  Comb(int n,int m)   //递归求组合
 				comb.push_back(tmp);
 			}
 			else
-				Comb(i-1,m-1);
+				Comb0(i-1,m-1,p);
 		}
 		return comb;
 	}
@@ -73,35 +58,44 @@ int cNum(int n,int m)
 	}
 }
 
-int main()
+vector<vector<int> >  Comb(int n,int m,int *p)  //全组合函数封装
 {
-//while(1)
+	vector<vector<int> > tot;
+	flag=true;
+	return Comb0(n,m,p); 
+}
+
+//int main()
 //{
+////while(1)
+////{
+////	cout<<" 输入参与组合元素总数 N=";
+////	cin>>n;	
+////	cout<<" 每个组合包含元素个数 M=";
+////	cin>>m;
+////	cout<<cNum(n,m)<<endl;
+////}
+//	int m,n;
 //	cout<<" 输入参与组合元素总数 N=";
 //	cin>>n;	
 //	cout<<" 每个组合包含元素个数 M=";
 //	cin>>m;
-//	cout<<cNum(n,m)<<endl;
+//	int k=cNum(n,m);
+//	int *p=new int[k];
+//	vector<vector<int> > tot;
+//	tot=Comb(n,m,p);
+//	cout<<"==========================="<<endl;
+//	for(int i=0;i<k;i++)
+//	{
+//		for(int j=0;j<m;j++)
+//		{
+//			cout<<tot[i][j];
+//		}
+//		cout<<endl;
+//	}
+//	tot=Comb(n,m+1,p);
+//	delete p;
+//	system("pause");
+//	return 0;
 //}
-	cout<<" 输入参与组合元素总数 N=";
-	cin>>n;	
-	cout<<" 每个组合包含元素个数 M=";
-	cin>>m;
-	int k=cNum(n,m);
-	p=new int[k];
-	vector<vector<int> > tot;
-	tot=Comb(n,m);
-	cout<<"==========================="<<endl;
-	for(int i=0;i<k;i++)
-	{
-		for(int j=0;j<m;j++)
-		{
-			cout<<tot[i][j];
-		}
-		cout<<endl;
-	}
-	delete p;
-	system("pause");
-	return 0;
-}
 	
