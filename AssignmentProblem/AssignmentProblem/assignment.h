@@ -10,6 +10,8 @@
 #include <string>
 using namespace std;
 
+static bool flag=true;
+static int mt;
 int cNum(int n,int m);
 vector<vector<int> >  Comb(int n,int m,int *p);
 

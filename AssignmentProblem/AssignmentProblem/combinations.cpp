@@ -3,8 +3,8 @@
 //n——参与组合元素个数
 //m——每个组合中元素个数
 //p——存放组合元素的数组
-static bool flag=true;
-static int mt;
+
+
 vector<vector<int> >  Comb0(int n,int m,int *p)   //递归求组合, 
 {
 	static vector<vector<int> > comb;
@@ -60,7 +60,7 @@ int cNum(int n,int m)
 
 vector<vector<int> >  Comb(int n,int m,int *p)  //全组合函数封装
 {
-	vector<vector<int> > tot;
+//	vector<vector<int> > tot;
 	flag=true;
 	return Comb0(n,m,p); 
 }
@@ -85,14 +85,14 @@ vector<vector<int> >  Comb(int n,int m,int *p)  //全组合函数封装
 //	vector<vector<int> > tot;
 //	tot=Comb(n,m,p);
 //	cout<<"==========================="<<endl;
-//	for(int i=0;i<k;i++)
-//	{
-//		for(int j=0;j<m;j++)
-//		{
-//			cout<<tot[i][j];
-//		}
-//		cout<<endl;
-//	}
+//	//for(int i=0;i<k;i++)
+//	//{
+//	//	for(int j=0;j<m;j++)
+//	//	{
+//	//		cout<<tot[i][j];
+//	//	}
+//	//	cout<<endl;
+//	//}
 //	tot=Comb(n,m+1,p);
 //	delete p;
 //	system("pause");
