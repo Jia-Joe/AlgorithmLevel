@@ -7,7 +7,7 @@ void swapv(vector<int> &s,int i,int j)
 	s[j]=t;
 }
 
-void perm0(vector<int> &s,int n,int m,int *p)
+void perm0(vector<int> s,int n,int m,int *p)
 {
 	if(m>n)
 	{
@@ -26,25 +26,23 @@ void perm0(vector<int> &s,int n,int m,int *p)
 
 		}
 
-		for(int i=n-1;i>=0;i--)
+		for(int i=0;i<m;i++)
 		{
 			p[m-1]=s[i];
-			if(!s.empty())
+			if(m==1)
 			{
-				vector<int>::iterator it = s.begin()+i;
-				s.erase(it);
-			}
-			if(mt==n-i)
-			{
-				for(int j=0;j<mt;j++)
+				for(int j=mt-1;j>=0;j--)
 				{
 					cout<<p[j];
 				}
 				cout<<endl;
 			}
-			else if(m>0)
+			else
 			{
-				perm0(s,n-1,m-1,p);
+				vector<int> w=s;
+				vector<int>::iterator it = w.begin()+i;
+				w.erase(it);
+				perm0(w,n-1,m-1,p);
 			}
 
 		}
@@ -52,9 +50,9 @@ void perm0(vector<int> &s,int n,int m,int *p)
 }
 int main()
 {
-	int *p=new int[24];
+	int *p=new int[120];
 	vector<int> s;
-	perm0(s,5,5,p);
+	perm0(s,3,3,p);
 	delete p;
 	system("pause");
 	return 0;
