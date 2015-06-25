@@ -26,7 +26,7 @@ void perm0(vector<int> s,int n,int m,int *p)
 
 		}
 
-		for(int i=0;i<m;i++)
+		for(int i=0;i<n;i++)
 		{
 			p[m-1]=s[i];
 			if(m==1)
@@ -52,7 +52,7 @@ int main()
 {
 	int *p=new int[120];
 	vector<int> s;
-	perm0(s,3,3,p);
+	perm0(s,4,2,p);
 	delete p;
 	system("pause");
 	return 0;
