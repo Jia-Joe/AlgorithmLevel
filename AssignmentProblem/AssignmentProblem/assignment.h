@@ -12,8 +12,11 @@ using namespace std;
 
 static bool flag=true;
 static int mt;
+void swapv(vector<int> &s,int i,int j);
 int cNum(int n,int m);
+int pNum(int n,int m);
 vector<vector<int> >  Comb(int n,int m,int *p);
+vector<vector<int> >  Perm(vector<int> s,int n,int m,int *p);
 
 
 #endif

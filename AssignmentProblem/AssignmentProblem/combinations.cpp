@@ -58,7 +58,7 @@ int cNum(int n,int m)
 	}
 }
 
-vector<vector<int> >  Comb(int n,int m,int *p)  //全组合函数封装
+vector<vector<int> >  Comb(int n,int m,int *p)  //组合函数封装
 {
 //	vector<vector<int> > tot;
 	flag=true;
