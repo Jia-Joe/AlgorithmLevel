@@ -165,42 +165,42 @@ int pNum(int n,int m)
 //}
 
 
-int main()
-{
-
-	int m,n;
-	cout<<" 输入参与排列元素总数 N=";
-	cin>>n;	
-	cout<<" 每个排列包含元素个数 M=";
-	cin>>m;
-	int k=pNum(n,m);
-	int *p=new int[k];
-	vector<int> s;
-	vector<vector<int> > tot;
-	tot=Perm(s,n,m,p);
-	cout<<"==========================="<<k<<endl;
-	for(int i=0;i<k;i++)
-	{
-		for(int j=0;j<m;j++)
-		{
-			cout<<tot[i][j];
-		}
-		cout<<endl;
-	}
-	k=pNum(n,m-1);
-	cout<<"==========================="<<k<<endl;
-	int *pp=new int[k];
-	tot=Perm(s,n,m-1,pp);
-	for(int i=0;i<k;i++)
-	{
-		for(int j=0;j<m-1;j++)
-		{
-			cout<<tot[i][j];
-		}
-		cout<<endl;
-	}
-	delete p;
-	delete pp;
-	system("pause");
-	return 0;
-}
+//int main()
+//{
+//
+//	int m,n;
+//	cout<<" 输入参与排列元素总数 N=";
+//	cin>>n;	
+//	cout<<" 每个排列包含元素个数 M=";
+//	cin>>m;
+//	int k=pNum(n,m);
+//	int *p=new int[k];
+//	vector<int> s;
+//	vector<vector<int> > tot;
+//	tot=Perm(s,n,m,p);
+//	cout<<"==========================="<<k<<endl;
+//	for(int i=0;i<k;i++)
+//	{
+//		for(int j=0;j<m;j++)
+//		{
+//			cout<<tot[i][j];
+//		}
+//		cout<<endl;
+//	}
+//	k=pNum(n,m-1);
+//	cout<<"==========================="<<k<<endl;
+//	int *pp=new int[k];
+//	tot=Perm(s,n,m-1,pp);
+//	for(int i=0;i<k;i++)
+//	{
+//		for(int j=0;j<m-1;j++)
+//		{
+//			cout<<tot[i][j];
+//		}
+//		cout<<endl;
+//	}
+//	delete p;
+//	delete pp;
+//	system("pause");
+//	return 0;
+//}
