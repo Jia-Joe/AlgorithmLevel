@@ -1,8 +1,5 @@
 # AlgorithmLevel
 
-<<<<<<< HEAD
-Level2
-=======
 
 
 Level 1
@@ -41,4 +38,3 @@ Level 4
 	Advanced knowledge of data structures, such as B- trees, binomial heap, Fibonacci heap, AVL trees, red-black tree, splay trees, jumping table and prefix trees.
 
 
->>>>>>> 862f819ef95898caf09bf57d13b4de85f7a34da3
