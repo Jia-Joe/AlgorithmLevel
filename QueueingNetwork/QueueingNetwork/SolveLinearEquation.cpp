@@ -4,7 +4,10 @@ using namespace std;
 //Reference---http://bbs.csdn.net/topics/380095940
 
 
-
+#include <math.h>
+#include <iostream>
+#include<iomanip>
+#include<cstdlib>
 //解线性方程组
 
 //----------------------------------------------全局变量定义区
@@ -14,7 +17,7 @@ int A_y[Number];        //a[][]中随着横坐标增加列坐标的排列顺序,如a[0][0],a[1][2
 int  lenth,copy_lenth;          //方程的个数
 double a_sum;         //计算行列式的值
 char * x;          //未知量a,b,c的载体
-
+extern double X[M];
 
 //----------------------------------------------函数声明区
 void input();         //输入方程组
@@ -170,14 +173,14 @@ void cramer()
 {
 	int i, j; double sum, sum_x; char ch;
 	//令第i行的列坐标为i
-	cout << "用克拉默(Cramer)法则结果如下:\n";
+//	cout << "用克拉默(Cramer)法则结果如下:\n";
 
 	for (i = 0; i<lenth; i++)
 		A_y[i] = i;
 	sum = calculate_A(lenth, 0);
 	if (sum != 0)
 	{
-		cout << "系数行列式不为零,方程有唯一的解:";
+//		cout << "系数行列式不为零,方程有唯一的解:";
 		for (i = 0; i<lenth; i++)
 		{
 			ch = 'a' + i;
@@ -186,7 +189,8 @@ void cramer()
 				A_y[j] = j;
 			exchange_lie(i);
 			sum_x = calculate_A(lenth, 0);
-			cout << endl << ch << "=" << sum_x / sum;
+			X[i + 1] = sum_x / sum;
+//			cout << endl << ch << "=" << X[i + 1];
 			exchange_lie(i);
 		}
 	}

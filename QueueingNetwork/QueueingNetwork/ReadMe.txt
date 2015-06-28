@@ -1,30 +1,15 @@
-﻿========================================================================
-    控制台应用程序：QueueingNetwork 项目概述
-========================================================================
+﻿****************************************************************
+The problem and the algorithm are based on the following paper:
+Buzen J P. Computational algorithms for closed queueing networks with exponential servers[J]. Communications of the ACM, 1973, 16(9): 527-531.
+****************************************************************
 
-应用程序向导已为您创建了此 QueueingNetwork 应用程序。
+  The paper examines some computational aspects of the basic equilibrium distributions and certain marginal distributions. The queuing system  is closed and the customer circulating through the network are of fixed number. There are M servers. The equilibrium distribution of customers in the network follows the Gordon and  Newell,  in form of the multiplied result of respect probabilities. The basic assumption is normal as can be seen frequently in the results of birth n death chains. The paper presented several computational aspects for the closed system applied with Jackson ,Jordan and Newell . 
+  Since the system is closed, the expected number of customers present at the ith facility is a function of G(N)., once the values of G(1), G(2), . . . , G(N) have been calculated it is possible to efficiently compute a number of potentially useful network characteristics. Despite the apparently large number of arithmetic operations involved, there exists a simple iterative algorithm which computes the entire set of values G(1), G ( 2 ) , . . . , G(N) using a total of N.M multiplications and N. M additions.
+  Using an auxiliary function g(n,m), the paper gave an algorithm to iteratively compute G(N) by giving a table. Furthermore, the storage space is reduced, not as much as data in the process of computation.
+  The second specialty of the case considered in this paper, is that the servers are load dependent, a completely arbitrary function. With the help one set of auxiliary function, and modified g(m,n), the computation is more complex and sophisticated. A simple A Comparison with Table I illustrates the greater complexity of the load dependent algorithm. To compare the complexity of the two algorithms on a more quantitative basis, note that the computation of a particular value of g (n, m) in Table III will require n additions, n divisions and 2n multiplications if the computation is Each complete column of N values of g(n, m) thus requires N(N + 1)/2 additions, N(N + 1)/2 divisions and N(N + 1 ) multiplications. It then follows that the evaluation of all M columns of Table III requires MN(N +1 )/2 additions and divisions and MN(N +1 ) multiplications, which is a total of 2MN(N +1) arithmetic operations. The allocation policy is clearly not adequate.
+  So the conclusion of distribution in load dependent case is given, The marginal distribution of customers at any other service facility can be obtained by permuting the order in which the service facilities are numbered so that the facility of interest is designated as the Mth facility and by then applying the algorithm to the permuted sequence.
+  Finally, an example is discussed in the paper, i,e. queueing networks are well suited for representing the overall behavior of multi-programmed computer systems. The problem is perfectly solved by the proposed table method in the paper.
+  Based on this paper, we have implemented its computational algorithms to find the value of g(n,m) with the progarmming languge C++. 
+  Using the parameters give by the example in the final part of the paper,we get the same results.
 
-本文件概要介绍组成 QueueingNetwork 应用程序的每个文件的内容。
-
-
-QueueingNetwork.vcxproj
-    这是使用应用程序向导生成的 VC++ 项目的主项目文件，其中包含生成该文件的 Visual C++ 的版本信息，以及有关使用应用程序向导选择的平台、配置和项目功能的信息。
-
-QueueingNetwork.vcxproj.filters
-    这是使用“应用程序向导”生成的 VC++ 项目筛选器文件。它包含有关项目文件与筛选器之间的关联信息。在 IDE 中，通过这种关联，在特定节点下以分组形式显示具有相似扩展名的文件。例如，“.cpp”文件与“源文件”筛选器关联。
-
-QueueingNetwork.cpp
-    这是主应用程序源文件。
-
-/////////////////////////////////////////////////////////////////////////////
-其他标准文件:
-
-StdAfx.h, StdAfx.cpp
-    这些文件用于生成名为 QueueingNetwork.pch 的预编译头 (PCH) 文件和名为 StdAfx.obj 的预编译类型文件。
-
-/////////////////////////////////////////////////////////////////////////////
-其他注释:
-
-应用程序向导使用“TODO:”注释来指示应添加或自定义的源代码部分。
-
-/////////////////////////////////////////////////////////////////////////////
+  We also consider the different situation：ai(ni)=i-C*exp(-k),where C is a constant.We get result with diferent throughput in each server of this Queueing Network. 

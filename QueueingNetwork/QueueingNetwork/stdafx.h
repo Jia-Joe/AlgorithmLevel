@@ -9,9 +9,7 @@
 
 #include <stdio.h>
 #include <tchar.h>
-#include <iostream>
-#include<iomanip>
-#include<cstdlib>
+
 
 
 const int M = 3, N = 4;
