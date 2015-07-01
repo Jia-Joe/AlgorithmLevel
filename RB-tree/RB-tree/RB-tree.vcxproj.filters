@@ -18,5 +18,22 @@
     <ClCompile Include="printTree.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="rbNode.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="RBtreeOp.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="rbTreeBasic.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="rbNode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>

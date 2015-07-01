@@ -41,6 +41,7 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
+    <IncludePath>D:\MY PJ\AlgorithmLevel\RB-tree\RB-tree;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <LinkIncremental>false</LinkIncremental>
@@ -77,6 +78,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="printTree.cpp" />
+    <ClCompile Include="rbNode.cpp" />
+    <ClCompile Include="RBtreeOp.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="rbNode.h" />
+    <ClInclude Include="rbTreeBasic.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

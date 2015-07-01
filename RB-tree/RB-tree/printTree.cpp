@@ -1,13 +1,9 @@
 #define NDEBUG 
-#include <iostream>
-#include <stack>
-#include <vector>
-#include <math.h>
-#include <assert.h>
-#include <iomanip>
-#include <string>
 
-using namespace std;
+#include <rbTreeBasic.h>
+//#include <rbNobe.h>
+#include <vector>
+#include <assert.h>
 
 int setwN=3;
 
@@ -432,6 +428,8 @@ int main()
 	cout << endl << endl;
 	printRBtree(s, tot);
 	cout << endl << endl;
+	rbNode *h;
+	
 	system("pause");
 	return 1;
 }
