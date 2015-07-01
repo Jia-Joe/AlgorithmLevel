@@ -1,25 +1,16 @@
 #include <rbTreeBasic.h>
 
-rbNode::rbNode(string key, double val, int N, bool color)
+rbNode::rbNode(double key, string val, int N, bool color)
 {
 	this->key = key;
 	this->val = val;
 	this->N = N;
 	this->color = color;
+	this->left = NULL;
+	this->right = NULL;
 }
 
 
 
 
 
-bool isRed(rbNode *x)
-{
-	if (x == NULL)
-	{
-		return false;
-	}
-	else
-	{
-		return x->color == true;
-	}
-}
