@@ -5,12 +5,12 @@
 #include <vector>
 #include <assert.h>
 
-int setwN=3;
+int setwN=2;
 
 void outchar(string a, int n);  //输出不带括号的字符代表黑色节点
-void outchar(string a, int n, bool isRchildBefore);
+void outchar(char a, int n, bool isRchildBefore);
 void outchar(char a, int n);
-void Routchar(string a, int n, bool isRchildBefore); //在第n个位置输出红色节点
+void Routchar(char a, int n, bool isRchildBefore); //在第n个位置输出红色节点
 void Routchar(string a, int n, bool isRchildBefore); //输出含有括号的字符代表红色节点
 
 //setwN=1，输出普通二叉树
@@ -63,10 +63,10 @@ void print2tree(vector <string> s, int n)
 		}
 		cout << endl;
 		//输出第四行
-		outchar(s[cnt++], leafmin);
+		outchar(s[cnt++][0], leafmin);
 		for (int ii = 1; ii < leafnum; ii++)
 		{
-			outchar(s[cnt++], leafstep);
+			outchar(s[cnt++][0], leafstep);
 		}
 		cout << endl;
 	}
@@ -79,7 +79,7 @@ void printFullRBtree(vector <string> s, int n)
 	int mid = pow(2, dpt - 1);
 	//输出根节点,根节点一定是黑色的
 	int cnt = 0;
-	outchar(s[cnt++], mid, false);
+	outchar(s[cnt++][0], mid, false);
 	bool isRchild = false;
 
 	cout << endl;
@@ -121,28 +121,28 @@ void printFullRBtree(vector <string> s, int n)
 		}
 		cout << endl;
 		//输出第四行
-		if (cnt % 3== 0)
+		if (s[cnt][1] == '1')
 		{
-			Routchar(s[cnt++], leafmin, false);//行首节点可以无视isChildBefore
+			Routchar(s[cnt++][0], leafmin, false);//行首节点可以无视isChildBefore
 			isRchild = true;
 		}
 		else
 		{
-			outchar(s[cnt++], leafmin, false);
+			outchar(s[cnt++][0], leafmin, false);
 			isRchild = false;
 		}
 		for (int ii = 1; ii < leafnum; ii++)
 		{
 
-			if (cnt % 3 == 0)
+			if (s[cnt][1] == '1')
 			{
 
-				Routchar(s[cnt++], leafstep, isRchild);
+				Routchar(s[cnt++][0], leafstep, isRchild);
 				isRchild = true;
 			}				
 			else
 			{
-				outchar(s[cnt++], leafstep, isRchild);
+				outchar(s[cnt++][0], leafstep, isRchild);
 				isRchild = false;
 			}
 		}
@@ -158,7 +158,7 @@ void printRBtree(vector <string> s, int n)
 	int mid = pow(2, dpt - 1);
 	//输出根节点,根节点一定是黑色的
 	int cnt = 0;
-	outchar(s[cnt++], mid, false);
+	outchar(s[cnt++][0], mid, false);
 	bool isRchild = false;
 
 	cout << endl;
@@ -170,13 +170,13 @@ void printRBtree(vector <string> s, int n)
 		vector<int> leafindex, leafindexbefore;
 
 		//输出第一行
-		if (s[(cnt + 1) / 2 - 1] == "_")
+		if (s[(cnt + 1) / 2 - 1][0] == '_')
 			outchar(' ', leafstep);
 		else
 			outchar(':', leafstep);
 		for (int ii = 1; ii < leafnum / 2; ii++)
 		{
-			if (s[(cnt + 1) / 2 - 1+ii] == "_")
+			if (s[(cnt + 1) / 2 - 1+ii][0] == '_')
 				outchar(' ', leafstep * 2);
 			else
 				outchar(':', leafstep * 2);
@@ -187,7 +187,7 @@ void printRBtree(vector <string> s, int n)
 		for (int j = 0; j < leafnum / 2; j++)
 		{
 			//输出左半部分
-			if (s[cnt + 2 * j] == "_")
+			if (s[cnt + 2 * j][0] == '_')
 			{
 				outchar(' ', leafmin);
 				for (int k = 0; k < setwN*leafstep / 2 - 1; k++)
@@ -204,12 +204,12 @@ void printRBtree(vector <string> s, int n)
 				}
 			}
 			//输出中间部分
-			if (s[(cnt + 1) / 2 - 1+j] == "_")
+			if (s[(cnt + 1) / 2 - 1+j][0] == '_')
 				cout << ' ';
 			else
 				cout << ':';
 			//输出右半部分
-			if (s[cnt + 2 * j+1] == "_")
+			if (s[cnt + 2 * j+1][0] == '_')
 			{				
 				for (int k = 0; k < setwN*leafstep / 2 - 1; k++)
 				{
@@ -234,13 +234,13 @@ void printRBtree(vector <string> s, int n)
 		cout << endl;
 
 		//输出第三行
-		if (s[cnt] == "_")
+		if (s[cnt][0] == '_')
 			outchar(' ', leafmin);
 		else
 			outchar(':', leafmin);
 		for (int ii = 1; ii < leafnum; ii++)
 		{
-			if (s[cnt+ii]=="_")
+			if (s[cnt+ii][0]=='_')
 				outchar(' ', leafstep);
 			else
 				outchar(':', leafstep);
@@ -248,28 +248,28 @@ void printRBtree(vector <string> s, int n)
 		cout << endl;
 
 		//输出第四行:节点关键字
-		if (cnt % 3 == 0)
+		if (s[cnt][1] == '1')
 		{
-			Routchar(s[cnt++], leafmin, false);//行首节点可以无视isChildBefore
+			Routchar(s[cnt++][0], leafmin, false);//行首节点可以无视isChildBefore
 			isRchild = true;
 		}
 		else
 		{
-			outchar(s[cnt++], leafmin, false);
+			outchar(s[cnt++][0], leafmin, false);
 			isRchild = false;
 		}
 		for (int ii = 1; ii < leafnum; ii++)
 		{
 
-			if (cnt % 3 == 0)
+			if (s[cnt][1] == '1')
 			{
 
-				Routchar(s[cnt++], leafstep, isRchild);
+				Routchar(s[cnt++][0], leafstep, isRchild);
 				isRchild = true;
 			}
 			else
 			{
-				outchar(s[cnt++], leafstep, isRchild);
+				outchar(s[cnt++][0], leafstep, isRchild);
 				isRchild = false;
 			}
 		}
@@ -344,7 +344,40 @@ void outchar(string a, int n, bool isRchildBefore)
 	}
 
 }
+void outchar(char a, int n, bool isRchildBefore)
+{
+	if (a == '_')
+	{
+		for (int i = 1; i<n; i++)
+		{
+			cout << setw(setwN) << ' ';
+		}
+		if (isRchildBefore)
+		{
+			cout << setw(setwN - 1) << ' ';
+		}
+		else
+		{
+			cout << setw(setwN) << ' ';
+		}
+	}
+	else
+	{
+		for (int i = 1; i<n; i++)
+		{
+			cout << setw(setwN) << ' ';
+		}
+		if (isRchildBefore)
+		{
+			cout << setw(setwN - 1) << a;
+		}
+		else
+		{
+			cout << setw(setwN) << a;
+		}
+	}
 
+}
 void outchar(string a, int n)
 {
 	for (int i = 1; i<n; i++)
@@ -355,24 +388,10 @@ void outchar(string a, int n)
 }
 
 
-void Routchar(char a, int n,bool isRchildBefore)
+
+void Routchar(char a, int n, bool isRchildBefore)
 {
-	for (int i = 1; i<n; i++)
-	{
-		cout << setw(setwN) << ' ';
-	}
-	if (isRchildBefore)
-	{
-		cout << setw(setwN - 2) << '(' << a << ')';
-	}
-	else
-	{
-		cout << setw(setwN - 1) << '(' << a << ')';
-	}
-}
-void Routchar(string a, int n, bool isRchildBefore)
-{
-	if (a == "_")
+	if (a == '_')
 	{
 		for (int i = 1; i < n; i++)
 		{
@@ -406,8 +425,8 @@ void Routchar(string a, int n, bool isRchildBefore)
 
 
 
-int x[15]={0,1,2,3,4,5,6,7,8,9,10,11,12,13,14};
-vector<int> v(15);
+//int x[15]={0,1,2,3,4,5,6,7,8,9,10,11,12,13,14};
+//vector<int> v(15);
 //int x[20]={223,12,221,33,632,7,8,921,1,11,123,13,23,1233,1,12,1234,23,12,34};
 
 
@@ -438,7 +457,7 @@ vector<int> v(15);
 
 /**
 
-输出示例：
+非RB树输出示例：
 0
 :
 .:::::::::::::::::::::::::::::::.
@@ -460,9 +479,6 @@ vector<int> v(15);
 .:. .:. .:. .:. .:. .:. .:. .:. .:. .:. .:. .:. .:. .:. .:. .:.
 : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : : :
 O P Q R S T U V W X Y Z [ \ ] ^ _ ` a b c d e f g h i j k l m n
-
-
-
 
 
 

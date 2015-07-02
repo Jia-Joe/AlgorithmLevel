@@ -37,7 +37,7 @@ public:
 	~rbTree()
 	{ 
 		deleteTree(root); 
-		cout << "Delete RBTree!"; 
+		cout <<endl<< "Delete RBTree!"<<endl; 
 	}
 	void put(double key, string val);
 	rbNode  *getroot(){ return root; }
