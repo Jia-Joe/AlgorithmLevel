@@ -3,7 +3,7 @@
 
 #include <iostream>
 #include <stack>
-
+#include<vector>
 #include <math.h>
 #include <iomanip>
 #include <string>
@@ -13,5 +13,7 @@
 
 const bool RED = true;
 const bool BLACK = false;
+
+void printRBtree(vector <string> s, int n);
 
 #endif

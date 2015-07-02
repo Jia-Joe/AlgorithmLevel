@@ -24,6 +24,9 @@
     <ClCompile Include="RBtreeOp.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="testRBtree.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="rbTreeBasic.h">

@@ -411,28 +411,28 @@ vector<int> v(15);
 //int x[20]={223,12,221,33,632,7,8,921,1,11,123,13,23,1233,1,12,1234,23,12,34};
 
 
-int main()
-{
-	int d=log((double)15)/log(2.0)+1;
-	vector <string> s;
-	int tot = 15;//totӦȡ3,7,15,31,63,127...
-	for (int i = 0; i < tot; i++)
-	{
-		char tmp[1] = { 'A' + i-1 };
-		string str;
-		str += tmp[0];
-		s.push_back(str);
-	}
-
-	s = { "1", "2", "3", "4", "5", "_", "7", "_", "9", "0", "1", "_", "_", "4", "_"};
-	cout << endl << endl;
-	printRBtree(s, tot);
-	cout << endl << endl;
-	rbNode *h;
-	
-	system("pause");
-	return 1;
-}
+//int main()
+//{
+//	int d=log((double)15)/log(2.0)+1;
+//	vector <string> s;
+//	int tot = 15;//totӦȡ3,7,15,31,63,127...
+//	for (int i = 0; i < tot; i++)
+//	{
+//		char tmp[1] = { 'A' + i-1 };
+//		string str;
+//		str += tmp[0];
+//		s.push_back(str);
+//	}
+//
+//	s = { "1", "2", "3", "4", "5", "_", "7", "_", "9", "0", "1", "_", "_", "4", "_"};
+//	cout << endl << endl;
+//	printRBtree(s, tot);
+//	cout << endl << endl;
+//	rbNode *h;
+//	
+//	system("pause");
+//	return 1;
+//}
 
 
 

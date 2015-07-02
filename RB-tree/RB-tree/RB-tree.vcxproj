@@ -80,6 +80,7 @@
     <ClCompile Include="printTree.cpp" />
     <ClCompile Include="rbNode.cpp" />
     <ClCompile Include="RBtreeOp.cpp" />
+    <ClCompile Include="testRBtree.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="rbNode.h" />

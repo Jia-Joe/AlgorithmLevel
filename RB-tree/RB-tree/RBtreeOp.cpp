@@ -79,7 +79,7 @@ rbNode * rbTree::put(rbNode *h, double key, string val)
 	//接下来三条if语句是红黑树中的插入函数与BST中的不同之处
 	if (isRed(h->right) && !isRed(h->left))
 		h = rotateLeft(h);
-	if (isRed(h->left) && isRed(h->left->left))
+	if (isRed(h->left) && (h->left->left!=NULL) && isRed(h->left->left))
 		h = rotateRight(h);
 	if (isRed(h->right) && isRed(h->left))
 		flipColors(h);
