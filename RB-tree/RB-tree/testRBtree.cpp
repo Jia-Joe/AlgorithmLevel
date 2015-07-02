@@ -1,7 +1,17 @@
 #include <rbTreeBasic.h>
 #include <map>
 
+void TraverseTree(rbNode *rn)
+{
+	if (rn != NULL)
+	{
+		
+		TraverseTree(rn->left);
+		cout << rn->val << "  ";
+		TraverseTree(rn->right);
 
+	}
+}
 int main(void)
 {
 	string ss = { "ABCDEFGHIJKLMNOPQRSTUVWXYZ" };
@@ -33,7 +43,15 @@ int main(void)
 	{
 		cout << val[i] << "--->" << abc[val[i]]<<endl;
 	}
-	
+
+	//红黑树节点插入
+	rbTree *rbtree=new rbTree();
+	for (int i = 0; i < 10; i++)
+	{
+		rbtree->put(abc[val[i]], val[i]);
+	}
+	TraverseTree(rbtree->getroot());
+	rbtree->~rbTree();
 	//int d = log((double)15) / log(2.0) + 1;
 	//vector<string> s;
 	//int tot = 15;//totӦȡ3,7,15,31,63,127...

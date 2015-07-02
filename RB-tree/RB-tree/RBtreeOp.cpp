@@ -93,3 +93,13 @@ void rbTree::put(double key, string val)
 	root = put(root, key, val);
 	root->color = BLACK;
 }
+
+void rbTree::deleteTree(rbNode *rn)
+{
+	if (rn != NULL)
+	{
+		deleteTree(rn->left);
+		deleteTree(rn->right);
+		delete rn;
+	}
+}
