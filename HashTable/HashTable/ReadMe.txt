@@ -1,30 +1,28 @@
-﻿========================================================================
-    控制台应用程序：HashTable 项目概述
-========================================================================
+﻿"We have detected your browser as originating from China and/or set in Chinese. Please note that one of the rules of Quora is that it is English-only for now. All questions and answers must be in English, although references to a foreign language are acceptable if they have appropriate context and would be understandable by an English speaker. For more details, please see Need Quora questions be written in English? Thanks for your attention.
 
-应用程序向导已为您创建了此 HashTable 应用程序。
+If this does not apply to you, please feel free to ignore this message"
 
-本文件概要介绍组成 HashTable 应用程序的每个文件的内容。
+[ Chin,14]--> [ or s,12]--> [igina,7]--> NULL
+[tecte,2]--> NULL
+[ish -,28]--> [as or,6]--> [wser ,5]--> NULL
+[ only,29]--> [it is,26]--> NULL
+[ Engl,27]--> [that ,25]--> [China,10]--> [r bro,4]--> [d you,3]--> NULL
+[es of,22]--> [e rul,21]--> [from ,9]--> NULL
+[ for ,30]--> [a is ,24]--> NULL
+[lease,16]--> [ese.P,15]--> [et in,13]--> [ting ,8]--> [ve de,1]--> NULL
+[ll qu,32]--> [now.A,31]--> [ Quor,23]--> NULL
+[ one ,19]--> [ that,18]--> [We ha,0]--> NULL
+[of th,20]--> [ note,17]--> [and /,11]--> NULL
 
-
-HashTable.vcxproj
-    这是使用应用程序向导生成的 VC++ 项目的主项目文件，其中包含生成该文件的 Visual C++ 的版本信息，以及有关使用应用程序向导选择的平台、配置和项目功能的信息。
-
-HashTable.vcxproj.filters
-    这是使用“应用程序向导”生成的 VC++ 项目筛选器文件。它包含有关项目文件与筛选器之间的关联信息。在 IDE 中，通过这种关联，在特定节点下以分组形式显示具有相似扩展名的文件。例如，“.cpp”文件与“源文件”筛选器关联。
-
-HashTable.cpp
-    这是主应用程序源文件。
-
-/////////////////////////////////////////////////////////////////////////////
-其他标准文件:
-
-StdAfx.h, StdAfx.cpp
-    这些文件用于生成名为 HashTable.pch 的预编译头 (PCH) 文件和名为 StdAfx.obj 的预编译类型文件。
-
-/////////////////////////////////////////////////////////////////////////////
-其他注释:
-
-应用程序向导使用“TODO:”注释来指示应添加或自定义的源代码部分。
-
-/////////////////////////////////////////////////////////////////////////////
+~ChainSymbolTable()
+~ChainSymbolTable()
+~ChainSymbolTable()
+~ChainSymbolTable()
+~ChainSymbolTable()
+~ChainSymbolTable()
+~ChainSymbolTable()
+~ChainSymbolTable()
+~ChainSymbolTable()
+~ChainSymbolTable()
+~ChainSymbolTable()
+~ChainingHashST()

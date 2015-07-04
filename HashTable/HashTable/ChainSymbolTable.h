@@ -22,11 +22,11 @@ private:
 
 public:
 	Node *first;
-	//ChainSymbolTable()
-	//{
-	//	Node *first = new Node;
-	//	first = NULL;
-	//}
+	ChainSymbolTable()
+	{
+		first = new Node;
+		first = NULL;
+	}
 	ChainSymbolTable(T1 key, T2 val)
 	{
 		first = new Node(key,val);
@@ -61,9 +61,9 @@ public:
 
 	void printList()
 	{
-		for (Node *x = first; x->next!= NULL; x = x->next)
+		for (Node *x = first; x!= NULL; x = x->next)
 		{
-			cout << "[ " << x->key << " , " << x->val << " ] --> ";
+			cout << "[" << x->key << "," << x->val << "]--> ";
 		}
 		cout << "NULL" << endl;
 	}
