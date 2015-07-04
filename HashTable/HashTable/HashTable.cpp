@@ -13,20 +13,20 @@
 
 //int hash(((day*R+month)%M)*R+year)%M;除留取余法，看做R进制，M为素数
 
-int _tmain(int argc, _TCHAR* argv[])
-{
-//	hash_map<char*, int>hashmap;
-
-	cout << BKDRHash("12s") << endl<<SDBMHash("12s") << endl;
-	FOR(i, 0, 12)
-	{
-		//cout << addt(i) << endl;
-		//cout << "sss" << endl;
-	}
-	
-	cout << "哈" << endl;
-	system("pause");
-	return 0;
-}
+//int _tmain(int argc, _TCHAR* argv[])
+//{
+////	hash_map<char*, int>hashmap;
+//
+//	cout << BKDRHash("12s") << endl<<SDBMHash("12s") << endl;
+//	FOR(i, 0, 12)
+//	{
+//		//cout << addt(i) << endl;
+//		//cout << "sss" << endl;
+//	}
+//	
+//	cout << "哈" << endl;
+//	system("pause");
+//	return 0;
+//}
 
 
