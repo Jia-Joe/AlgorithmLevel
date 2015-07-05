@@ -14,15 +14,4 @@ If this does not apply to you, please feel free to ignore this message"
 [ one ,19]--> [ that,18]--> [We ha,0]--> NULL
 [of th,20]--> [ note,17]--> [and /,11]--> NULL
 
-~ChainSymbolTable()
-~ChainSymbolTable()
-~ChainSymbolTable()
-~ChainSymbolTable()
-~ChainSymbolTable()
-~ChainSymbolTable()
-~ChainSymbolTable()
-~ChainSymbolTable()
-~ChainSymbolTable()
-~ChainSymbolTable()
-~ChainSymbolTable()
 ~ChainingHashST()

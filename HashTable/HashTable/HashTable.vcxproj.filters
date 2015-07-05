@@ -38,9 +38,6 @@
     <ClCompile Include="stdafx.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="HashTable.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="testrecur.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
@@ -51,6 +48,12 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="ChainingHashST.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LinearProbingHashTable.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="testhashfun.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

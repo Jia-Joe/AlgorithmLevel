@@ -77,7 +77,7 @@ public:
 			delete x;
 		}
 		delete p;
-		cout << "~ChainSymbolTable()" << endl;
+		//cout << "~ChainSymbolTable()" << endl;
 	}
 };
 

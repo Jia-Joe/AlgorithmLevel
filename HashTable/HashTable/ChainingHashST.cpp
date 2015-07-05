@@ -14,6 +14,15 @@ of Quora is that it is English - only for now.All questions");
 			//Need Quora questions be written in English ? Thanks for your attention.\
 			//If this does not apply to you, please feel free to ignore this message");
 					
+	string *star,sr="123";
+	star= &sr;
+	if(*star=="1")
+		cout <<"yes"<< endl;
+	else
+		cout << "no" << endl;
+	int i0 = NULL;
+	cout << i0<< endl;
+
 	for (int i = 0; i < ts.size() / Le-1 ; i++)
 	{
 		string tmp = ts.substr(i *Le, Le);

@@ -10,8 +10,8 @@
 #include <stdio.h>
 #include <tchar.h>
 #include<iostream>
-
 #include <vector>
+#include<string>
 #include "ChainSymbolTable.h"
 #include "hashfun.h" 
 #include "ChainingHashST.h"
