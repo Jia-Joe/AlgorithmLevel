@@ -1,17 +1,15 @@
-// Graph.cpp : 定义控制台应用程序的入口点。
-//
-
 #include "stdafx.h"
+#include "Graph.h"
 
-
+//int degree(Graph &G, int v);
 int _tmain(int argc, _TCHAR* argv[])
 {
 	//typedef vector<int> vint;
 	//vector<vint> adj;
 	Graph g(7);
-	g.cinEdge();
+	cout << degree(g, 1) << endl;
 	g.print();
-
+ 
 	system("pause");
 	return 0;
 }
