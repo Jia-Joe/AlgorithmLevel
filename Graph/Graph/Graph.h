@@ -46,8 +46,15 @@ public:
 	vector<int> *getAdj(int i) { return adj[i]; }
 	void addEdge(int v,int w)
 	{
-		adj[v]->push_back(w);
-		adj[w]->push_back(v);
+		if (v != w)
+		{
+			adj[v]->push_back(w);
+			adj[w]->push_back(v);
+		}
+		else
+		{
+			adj[v]->push_back(v);
+		}
 		E++;
 	}
 	void print()
@@ -103,7 +110,7 @@ int numOfSelfLoops(Graph &G)
 	{
 		for (int k = 0; k < G.getAdj(i)->size(); k++)
 		{
-			if (G.getAdj(i)->at(k)==i)
+			if (G.getAdj(i)->at(k)==i)// <=>if ((*(G.getAdj(i)))[k]==i)
 				m++;
 		}
 	}
