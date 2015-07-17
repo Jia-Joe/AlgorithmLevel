@@ -85,11 +85,14 @@ public:
 
 };
 
-int degree(Graph &G, int v)
+//头文件中只声明，函数实现应该放在源文件中，否则要加static
+//重定义error因为#include是预处理部分，在编译之前由预处理程序在这个部分复制头文件的内容过来
+//所以在编译时候，两文件都有函数的定义。那么链接程序就不知道链接那个定义好了（二义性）
+static int degree(Graph &G, int v)
 {
 	return G.getAdj(v)->size();
 }
-int maxDegree(Graph &G)
+static int maxDegree(Graph &G)
 {
 	int m = 0;
 	for (int i = 0; i < G.Vget(); i++)
@@ -99,11 +102,11 @@ int maxDegree(Graph &G)
 	}
 	return m;
 }
-int avgDegree(Graph &G)
+static int avgDegree(Graph &G)
 {
 	return 2*G.Eget()/G.Vget();
 }
-int numOfSelfLoops(Graph &G)
+static int numOfSelfLoops(Graph &G)
 {
 	int m = 0;
 	for (int i = 0; i < G.Vget(); i++)

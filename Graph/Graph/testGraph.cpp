@@ -1,9 +1,10 @@
-//#pragma once
+#pragma once
 #include "stdafx.h"
-#include "Graph.h"
-#include"GraphSearch.h"
+//#include "Graph.h"
+//#include"GraphSearch.h"
 
 //int degree(Graph &G, int v);
+
 int _tmain(int argc, _TCHAR* argv[])
 {
 	//typedef vector<int> vint;
