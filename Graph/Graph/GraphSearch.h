@@ -13,7 +13,7 @@ public:
 	{
 		v = G.Vget()-1;
 		count = 0;
-		for (int i = 0; i < v; i++)
+		for (int i = 0; i <= v; i++)
 		{
 			marked.push_back(false);
 		}
