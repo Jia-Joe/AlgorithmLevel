@@ -1,7 +1,7 @@
 #pragma once
 #include "stdafx.h"
 
-class DeepFirstPaths
+class DepthFirstPaths
 {
 private:
 	vector<bool> marked;
@@ -23,7 +23,7 @@ private:
 	}
 
 public:
-	DeepFirstPaths(Graph &G, int s)
+	DepthFirstPaths(Graph &G, int s)
 	{
 		this->s = s;
 		for (int i = 0; i < G.Vget(); i++)
@@ -39,9 +39,9 @@ public:
 	}
 	vector<int> pathTo(int v)
 	{
-		if (!hasPathTo(v))
-			return;
 		vector<int> path;
+		if (!hasPathTo(v))
+			return path;
 		for (int x = v; x != s; x = edgeTo[x])
 			path.push_back(x);
 		path.push_back(s);
