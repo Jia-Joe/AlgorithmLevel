@@ -7,14 +7,13 @@
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	//typedef vector<int> vint;
-	//vector<vint> adj;
 	Digraph g(6);
 	g.print();
 
-	//DepthFirstSearch dfs(g);
-	//for (int i = 0; i < 6; i++)
-	//	cout << "--" << dfs.Marked(i);
+	DirectDFS dfs(g,0);
+	for (int i = 0; i < 6; i++)
+		cout << "--" << dfs.markedv(i);
+
 	//cout << endl << dfs.Count() << endl << endl;
 
 	//test path

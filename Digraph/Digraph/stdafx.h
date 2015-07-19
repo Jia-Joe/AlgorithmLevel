@@ -20,7 +20,7 @@
 using namespace std;
 
 #include "Digraph.h"
-
+#include "DirectDFS.h"
 
 
 // TODO:  在此处引用程序需要的其他头文件
