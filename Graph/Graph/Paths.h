@@ -5,8 +5,8 @@
 class BreadthFirstPaths
 {
 private:
-	vector<int> marked;
-	vector<bool> edgeTo;
+	vector<bool> marked;
+	vector<int> edgeTo;
 	int s;
 
 	void bfs(Graph &G, int v)
