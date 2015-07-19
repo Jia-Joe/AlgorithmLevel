@@ -47,5 +47,8 @@
     <ClCompile Include="testCC.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="dfsAPP.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
