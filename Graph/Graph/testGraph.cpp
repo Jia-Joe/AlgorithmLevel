@@ -36,6 +36,24 @@ int _tmain(int argc, _TCHAR* argv[])
 			cout << endl;
 		}
 	}
+	//BreadthFirstPaths bfp(g, 0);
+	//for (int i = 0; i < 6; i++)
+	//{
+
+	//	if (bfp.hasPathTo(i))
+	//	{
+	//		vector<int> tmp = bfp.pathTo(i);
+	//		int len = tmp.size() - 1;
+	//		for (int j = 0; j <= len; j++)
+	//		{
+	//			if (j == 0)
+	//				cout << tmp[len - j];
+	//			else
+	//				cout << '-' << tmp[len - j];
+	//		}
+	//		cout << endl;
+	//	}
+	//}
 	system("pause");
 	return 0;
 }

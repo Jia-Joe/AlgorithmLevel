@@ -1,6 +1,10 @@
 #pragma once
 #include "stdafx.h"
 
+//class BreadthFirstPaths
+//{
+//};
+
 
 class DepthFirstSearch
 {
