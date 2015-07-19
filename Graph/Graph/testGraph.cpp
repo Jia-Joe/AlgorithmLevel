@@ -5,7 +5,7 @@
 
 //int degree(Graph &G, int v);
 
-int _tmain(int argc, _TCHAR* argv[])
+int _tmain0(int argc, _TCHAR* argv[])
 {
 	//typedef vector<int> vint;
 	//vector<vint> adj;
