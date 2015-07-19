@@ -64,6 +64,19 @@ public:
 		}
 
 	}
+	Digraph reverse()
+	{
+		Digraph *R = new Digraph(V);
+		for (int v = 0; v < V; v++)
+		{
+			for (int w : *adj[v])
+			{
+				R->addEdge(w, v);
+			}
+		}
+		return *R;
+	}
+
 	~Digraph()
 	{
 		for (int i = 0; i < V; i++)
