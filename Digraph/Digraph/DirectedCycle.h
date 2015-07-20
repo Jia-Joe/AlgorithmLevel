@@ -55,7 +55,7 @@ public:
 	{
 		return !cycle.empty();
 	}
-	stack<int> getCycleStack()
+	stack<int> getcycle()
 	{
 		return cycle;
 	}

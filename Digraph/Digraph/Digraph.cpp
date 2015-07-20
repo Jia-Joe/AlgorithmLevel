@@ -5,7 +5,7 @@
 #include "stdafx.h"
 #define N 6
 
-int _tmain(int argc, _TCHAR* argv[])
+int _tmain0(int argc, _TCHAR* argv[])
 {
 	Digraph g(N);
 	g.print();
@@ -15,8 +15,8 @@ int _tmain(int argc, _TCHAR* argv[])
 		cout << "--" << dfs.markedv(i);
 	cout <<  endl << endl;
 	DirectedCycle cyc(g);
-	stack<int> st = cyc.getCycleStack();
-	for (int i = 0; i < 4; i++)
+	stack<int> st = cyc.getcycle();
+	for (int i = 0; i <= st.size(); i++)
 	{
 		cout<<'-'<<st.top();
 		st.pop();
