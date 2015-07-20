@@ -23,7 +23,11 @@ public:
 		{
 			marked.push_back(false);
 		}
-		dfs(G, s);
+		for (int v = 0; v < G.Vget(); v++)
+		{
+			if (!marked[v])
+				dfs(G, v);
+		}
 	}
 	DirectDFS(Digraph G, vector<int> sources)
 	{

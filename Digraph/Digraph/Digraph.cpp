@@ -3,15 +3,15 @@
 
 #pragma once
 #include "stdafx.h"
-
+#define N 6
 
 int _tmain(int argc, _TCHAR* argv[])
 {
-	Digraph g(6);
+	Digraph g(N);
 	g.print();
 
 	DirectDFS dfs(g,0);
-	for (int i = 0; i < 6; i++)
+	for (int i = 0; i < N; i++)
 		cout << "--" << dfs.markedv(i);
 
 	//cout << endl << dfs.Count() << endl << endl;

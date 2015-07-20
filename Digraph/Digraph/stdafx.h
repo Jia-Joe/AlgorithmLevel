@@ -13,7 +13,7 @@
 #include <string>
 #include <iostream>
 #include <queue>
-
+#include <stack>
 #include <stdio.h>
 #include <tchar.h>
 
@@ -21,6 +21,6 @@ using namespace std;
 
 #include "Digraph.h"
 #include "DirectDFS.h"
-
+#include "DirectedCycle.h"
 
 // TODO:  在此处引用程序需要的其他头文件
