@@ -54,4 +54,16 @@ public:
 	{
 		return reversePost;
 	}
+	vector<int> gTopoSort()
+	{
+		stack<int> stmp = reversePost;
+		vector<int> vout;
+		int cs1 = stmp.size();
+		for (int i = 0; i <cs1; i++)
+		{
+			vout.push_back(stmp.top());
+			stmp.pop();
+		}
+		return vout;
+	}
 };

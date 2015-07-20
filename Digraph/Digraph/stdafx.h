@@ -23,5 +23,5 @@ using namespace std;
 #include "DirectDFS.h"
 #include "DirectedCycle.h"
 #include "TopoSort.h"
-
+#include "StrongConnectedComponent.h"
 // TODO:  在此处引用程序需要的其他头文件

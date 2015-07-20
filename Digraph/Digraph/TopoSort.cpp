@@ -12,13 +12,13 @@ int _tmain(int argc, _TCHAR* argv[])
 		cout << "--" << dfs.markedv(i);
 	cout << endl << endl;
 
-	DirectedCycle cyc(g);
-	if (cyc.hasCycle())
-	{
-		cout << "NULL" << endl;
-	}
-	else
-	{
+	//DirectedCycle cyc(g);
+	//if (cyc.hasCycle())
+	//{
+	//	cout << "NULL" << endl;
+	//}
+	//else
+	//{
 		DepthFirstOrder ord(g);
 		queue<int> q1 = ord.gpre();
 		queue<int> q2 = ord.gpost();
@@ -48,8 +48,12 @@ int _tmain(int argc, _TCHAR* argv[])
 			s1.pop();
 		}
 		cout << endl ;
-
-	}
+		for (int i = 0; i <cs1; i++)
+		{
+			cout << "->" << ord.gTopoSort()[i];
+		}
+		cout << endl;
+	//}
 
 	system("pause");
 	return 0;
