@@ -28,6 +28,16 @@ private:
 		}
 	}
 public:
+	Digraph(int V,int option)
+	{
+		this->V = V;
+		this->E = 0;
+		for (int i = 0; i < V; i++)
+		{
+			vector<int> *p = new vector<int>;
+			adj.push_back(p);
+		}
+	}
 	Digraph(int V)
 	{
 		this->V = V;
@@ -66,7 +76,8 @@ public:
 	}
 	Digraph reverse()
 	{
-		Digraph *R = new Digraph(V);
+		Digraph *R=new Digraph(V,0);
+
 		for (int v = 0; v < V; v++)
 		{
 			for (int w : *adj[v])

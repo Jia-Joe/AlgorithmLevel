@@ -50,5 +50,8 @@
     <ClCompile Include="TopoSort.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="testSCC.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
