@@ -13,8 +13,14 @@ int _tmain(int argc, _TCHAR* argv[])
 	DirectDFS dfs(g,0);
 	for (int i = 0; i < N; i++)
 		cout << "--" << dfs.markedv(i);
-
-	//cout << endl << dfs.Count() << endl << endl;
+	cout <<  endl << endl;
+	DirectedCycle cyc(g);
+	stack<int> st = cyc.getCycleStack();
+	for (int i = 0; i < 4; i++)
+	{
+		cout<<'-'<<st.top();
+		st.pop();
+	}
 
 	//test path
 	//DepthFirstPaths dfp(g, 0);
