@@ -3,9 +3,19 @@
 
 #pragma once
 #include "stdafx.h"
-#define N 6
+#define N 13
 
-int _tmain0(int argc, _TCHAR* argv[])
+bool reachable(Digraph &G,int v, int w)
+{
+	vector<DirectDFS> all;
+	for (int x = 0; x < G.Vget(); x++)
+	{
+		DirectDFS all0(G,x);
+		all.push_back(all0);
+	}
+	return all[v].markedv(w);
+}
+int _tmain(int argc, _TCHAR* argv[])
 {
 	Digraph g(N);
 	g.print();
@@ -21,44 +31,9 @@ int _tmain0(int argc, _TCHAR* argv[])
 		cout<<'-'<<st.top();
 		st.pop();
 	}
+	cout << endl;
+	cout << reachable(g, 0, 11) << reachable(g, 8, 11) << endl;
 
-	//test path
-	//DepthFirstPaths dfp(g, 0);
-	//for (int i = 0; i < 6; i++)
-	//{
-	//	
-	//	if (dfp.hasPathTo(i))
-	//	{
-	//		vector<int> tmp = dfp.pathTo(i);
-	//		int len = tmp.size()-1;
-	//		for (int j = 0; j <=len; j++)
-	//		{
-	//			if (j == 0)
-	//				cout << tmp[len-j];
-	//			else
-	//				cout << '-' << tmp[len-j];
-	//		}
-	//		cout << endl;
-	//	}
-	//}
-	//BreadthFirstPaths bfp(g, 0);
-	//for (int i = 0; i < 6; i++)
-	//{
-
-	//	if (bfp.hasPathTo(i))
-	//	{
-	//		vector<int> tmp = bfp.pathTo(i);
-	//		int len = tmp.size() - 1;
-	//		for (int j = 0; j <= len; j++)
-	//		{
-	//			if (j == 0)
-	//				cout << tmp[len - j];
-	//			else
-	//				cout << '-' << tmp[len - j];
-	//		}
-	//		cout << endl;
-	//	}
-	//}
 	system("pause");
 	return 0;
 }

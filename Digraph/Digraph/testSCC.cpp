@@ -1,7 +1,7 @@
 #pragma once
 #include "stdafx.h"
 
-int _tmain(int argc, _TCHAR* argv[])
+int _tmain1(int argc, _TCHAR* argv[])
 {
 	Digraph g(13);
 	g.print();

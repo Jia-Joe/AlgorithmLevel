@@ -2,7 +2,7 @@
 #include "stdafx.h"
 #define N 13
 
-int _tmain1(int argc, _TCHAR* argv[])
+int _tmain0(int argc, _TCHAR* argv[])
 {
 	Digraph g(N);
 	g.print();
