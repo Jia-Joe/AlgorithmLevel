@@ -41,5 +41,8 @@
     <ClCompile Include="MinSpanningTree.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="EdgeWeightedGraph.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
