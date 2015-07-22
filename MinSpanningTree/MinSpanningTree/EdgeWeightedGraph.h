@@ -15,7 +15,16 @@ public:
 		this->w = w;
 		this->weight = weight;
 	}
-	double weightGet()
+	
+	//bool operator < (const Edge &a,const Edge &b) const
+	//{//隐含this参数，所以参数过多，无法通过编译
+	//	return a.weightGet() < b.weightGet();
+	//}
+	bool operator < (const Edge &a) const
+	{
+		return a.weightGet() < this->weight;
+	}
+	double weightGet() const
 	{
 		return weight;
 	}
@@ -57,14 +66,14 @@ struct Compare
 	}
 };
 
-class EdgeWeightedGraph
+class EdgeWeightedGraph_UseSet
 {
 private:
 	int V;
 	int E;
 	vector<set<Edge, Compare<Edge> > >adj;
 public:
-	EdgeWeightedGraph(int V)
+	EdgeWeightedGraph_UseSet(int V)
 	{
 		this->V = V;
 		cin >> this->E;
@@ -106,52 +115,52 @@ public:
 		}
 	}
 };
-//class EdgeWeightedGraph
-//{
-//private:
-//	int V;
-//	int E;
-//	vector<set<Edge> >adj;
-//public:
-//	EdgeWeightedGraph(int V)
-//	{
-//		this->V = V;
-//		cin >> this->E;
-//		for (int i = 0; i < V; i++)
-//		{
-//			set<Edge> tmp;
-//			adj.insert(tmp);
-//		}
-//		int vin, win;
-//		double weightin;
-//		for (int k = 0; k < E; k++)
-//		{
-//			cin >> vin >> win >> weightin;
-//			Edge e(vin, win, weightin);
-//			if (vin != win)
-//			{
-//				adj[vin].insert(e);
-//				adj[win].insert(e);
-//			}
-//			else
-//				adj[vin].insert(e);
-//		}
-//	}
-//	int Vget(){ return V; }
-//	int Eget(){ return E; }
-//	set<Edge> adjGet(int i) { return adj[i]; }
-//	void print()
-//	{
-//		cout << V << " vertices, " << E << " edges" << endl;
-//		for (int i = 0; i < V; i++)
-//		{
-//			cout << "[V" << i << "]";
-//			for (Edge e : adj[i])
-//			{
-//				int w = e.other(i);
-//				cout << "--[" << e.weightGet() << "]--" << w << " , ";
-//			}
-//			cout << endl;
-//		}
-//	}
-//};
+class EdgeWeightedGraph
+{
+private:
+	int V;
+	int E;
+	vector<list<Edge> >adj;
+public:
+	EdgeWeightedGraph(int V)
+	{
+		this->V = V;
+		cin >> this->E;
+		for (int i = 0; i < V; i++)
+		{
+			list<Edge> tmp;
+			adj.push_back(tmp);
+		}
+		int vin, win;
+		double weightin;
+		for (int k = 0; k < E; k++)
+		{
+			cin >> vin >> win >> weightin;
+			Edge e(vin, win, weightin);
+			if (vin != win)
+			{
+				adj[vin].push_back(e);
+				adj[win].push_back(e);
+			}
+			else
+				adj[vin].push_back(e);
+		}
+	}
+	int Vget(){ return V; }
+	int Eget(){ return E; }
+	list<Edge> adjGet(int i) { return adj[i]; }
+	void print()
+	{
+		cout << V << " vertices, " << E << " edges" << endl;
+		for (int i = 0; i < V; i++)
+		{
+			cout << "<V" << i << ">";
+			for (Edge e : adj[i])
+			{
+				int w = e.other(i);
+				cout << "--"<<w<<'['<< e.weightGet() << ']';
+			}
+			cout << endl;
+		}
+	}
+};

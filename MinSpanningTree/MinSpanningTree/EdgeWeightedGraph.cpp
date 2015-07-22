@@ -1,9 +1,10 @@
 #include "stdafx.h"
 
-#define N 5
+#define N 8
 
-int _tmain(int argc, _TCHAR* argv[])
+int _tmain0(int argc, _TCHAR* argv[])
 {
+
 	EdgeWeightedGraph g(N);
 	g.print();
 
