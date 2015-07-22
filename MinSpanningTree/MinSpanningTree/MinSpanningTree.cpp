@@ -9,7 +9,7 @@ int _tmain(int argc, _TCHAR* argv[])
 {
 	EdgeWeightedGraph g(N);
 	g.print();
-	LazyPrimMST lmst(g);
+	PrimMST lmst(g);
 	for (Edge e : lmst.mstGet())
 	{
 		int v1 = e.either();

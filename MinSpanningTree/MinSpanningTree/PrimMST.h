@@ -1,6 +1,8 @@
 #pragma once
 #include "stdafx.h"
 
+#define NUM 10000000
+
 class LazyPrimMST
 {
 private:
@@ -57,5 +59,68 @@ public:
 
 class PrimMST
 {
-	
+private:
+	vector<Edge> EdgeTo;
+	vector<bool> marked;//若v在树中，marked[v]=true
+	vector<double> distTo;//distTo[w]=edgeTo[w].weightget()
+	list<int> vindex;
+	vector<Edge> mst; 
+	void visit(EdgeWeightedGraph &G, int v)
+	{
+		//标记v并将所有连接v和未标记顶点的边加入pq
+		marked[v] = true;
+		for (Edge e : G.adjGet(v))
+		{
+			int w = e.other(v);
+			if (marked[w])
+				continue;
+			if (e.weightGet() < distTo[w])
+			{
+				EdgeTo[w] = e;
+				distTo[w] = e.weightGet();
+			}
+		}
+	}
+public:
+	PrimMST(EdgeWeightedGraph &G)
+	{
+		for (int i = 0; i < G.Vget(); i++)
+		{
+			Edge newE(0,0,NUM);
+			EdgeTo.push_back(newE);
+			marked.push_back(false);
+			distTo.push_back(NUM);
+		}
+		visit(G, 0);
+		for (int ii = 0; ii < G.Vget()-1; ii++)
+		{
+			double cmp = NUM;
+			int imin = 0;
+			//cout << NUM << "-";
+			for (int i = 0; i < G.Vget();i++)
+			{
+				if (!marked[i] && (EdgeTo[i].weightGet() < cmp))
+				{
+					cmp = EdgeTo[i].weightGet();
+					imin = i;
+				}
+			}
+			mst.push_back(EdgeTo[imin]);
+			visit(G, imin);
+		}
+	}
+
+	vector<Edge> mstGet()
+	{
+		return mst;
+	}
+	double weightGet()
+	{
+		double wsum = 0;
+		for (Edge e : mst)
+		{
+			wsum += e.weightGet();
+		}
+		return wsum;
+	}
 };
