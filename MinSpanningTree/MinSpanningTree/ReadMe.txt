@@ -1,4 +1,4 @@
-﻿LazyPrimMST:
+﻿Minimum spanning tree:
 16
 0 7 0.16
 0 2 0.26

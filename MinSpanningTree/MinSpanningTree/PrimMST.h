@@ -3,6 +3,7 @@
 
 #define NUM 10000000
 
+//Space:E,Time:ElogE
 class LazyPrimMST
 {
 private:
@@ -57,6 +58,7 @@ public:
 	}
 };
 
+//Space:V,Time:ElogV(IndexMinPQ Based)
 class PrimMST
 {
 private:

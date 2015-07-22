@@ -9,14 +9,16 @@ int _tmain(int argc, _TCHAR* argv[])
 {
 	EdgeWeightedGraph g(N);
 	g.print();
-	PrimMST lmst(g);
-	for (Edge e : lmst.mstGet())
+	//KruskalMST mst(g);
+	//LazyPrimMST mst(g);
+	PrimMST mst(g);
+	for (Edge e : mst.mstGet())
 	{
 		int v1 = e.either();
 		int w1 = e.other(v1);
 		cout << v1 << "--" << w1 <<endl;
 	}
-	cout << "MST Weight: " << lmst.weightGet() << endl;
+	cout << "MST Weight: " << mst.weightGet() << endl;
 	system("pause");
 	return 0;
 }
