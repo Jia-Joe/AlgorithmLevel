@@ -98,20 +98,17 @@ public:
 	EdgeWeightedDigraph(int V)
 	{
 		this->V = V;
-		cin >> this->E;
+		this->E = 0 ;
 		for (int i = 0; i < V; i++)
 		{
 			list<Edge> tmp;
 			adj.push_back(tmp);
 		}
-		int vin, win;
-		double weightin;
-		for (int k = 0; k < E; k++)
-		{
-			cin >> vin >> win >> weightin;
-			Edge e(vin, win, weightin);
-			adj[vin].push_back(e);
-		}
+	}
+	void addEdge(Edge e)
+	{
+		adj[e.from()].push_back(e);
+		E++;
 	}
 	int Vget(){ return V; }
 	int Eget(){ return E; }
@@ -125,7 +122,7 @@ public:
 			for (Edge e : adj[i])
 			{
 				int w = e.to();
-				cout << "--" << w << '[' << e.weightGet() << ']';
+				cout << "-->" << w << '[' << e.weightGet() << ']';
 			}
 			cout << endl;
 		}
