@@ -33,7 +33,7 @@ private:
 	}
 	bool more(int i, int j)
 	{
-		return keys[i]>keys[j];
+		return keys[pq[i]]>keys[pq[j]];
 	}
 	void exch(int i, int j)
 	{
@@ -50,7 +50,7 @@ public:
 		for (int i = 0; i < maxN + 1; i++)
 		{
 			keys.push_back(INF);
-			pq.push_back(NULL);
+			pq.push_back(-1);
 			qp.push_back(-1);
 		}
 	}
@@ -79,7 +79,7 @@ public:
 		int indexMin = pq[1];
 		exch(1, N--);//第一个和最后一个交换
 		sink(1);
-		keys[pq[N + 1]] = NULL;
+		keys[pq[N + 1]] = -1;
 		qp[pq[N + 1]] = -1;
 		return indexMin;
 	}
@@ -87,9 +87,17 @@ public:
 	{
 		return pq[1];
 	}
-	int minKey()
+	int getN()
 	{
-		return keys[pq[1]];
+		return N;
+	}
+	void print()
+	{
+		for (int i = 1; i <= N; i++)
+		{
+			cout << keys[pq[i]] << "--";
+		}
+		cout << endl;
 	}
 	void change(int k, T key)
 	{
@@ -105,5 +113,4 @@ public:
 		keys[pq[N + 1]] = NULL;
 		qp[pq[N + 1]] = -1;
 	}
-
 };
