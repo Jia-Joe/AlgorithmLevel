@@ -2,7 +2,7 @@
 
 #define N 8
 
-int _tmain(int argc, _TCHAR* argv[])
+int _tmain1(int argc, _TCHAR* argv[])
 {
 
 	EdgeWeightedDigraph g(N);
