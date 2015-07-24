@@ -5,6 +5,7 @@ template<class T=double>
 class IndexMinPQ
 {
 private:
+	int N = 0;
 	vector<int> pq;//索引二叉堆，根节点序号为1，不为0
 	vector<int> qp;//pq的逆序，qp[i]=i在pq[]中的位置,qp[pq[i]]=pq[qp[i]]=i
 	//若i不在队列中，qp[i]=-1
@@ -44,8 +45,16 @@ private:
 	}
 
 public:
-	IndexMinPQ(){};
-	IndexMinPQInit(int maxN)
+	IndexMinPQ()
+	{ 
+		//for (int i = 0; i < maxN + 1; i++)
+		//{
+		//	keys.push_back(INF);
+		//	pq.push_back(-1);
+		//	qp.push_back(-1);
+		//}
+	};
+	void IndexMinPQInit(int maxN)
 	{
 		for (int i = 0; i < maxN + 1; i++)
 		{

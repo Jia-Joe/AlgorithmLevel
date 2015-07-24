@@ -12,7 +12,7 @@ struct ds
 	}
 };
 
-int _tmain(int argc, _TCHAR* argv[])
+int _tmainIMPQ(int argc, _TCHAR* argv[])
 {
 	map<int, ds> mp;
 	for (int i = 0; i < NPQ; i++)
@@ -44,7 +44,8 @@ int _tmain(int argc, _TCHAR* argv[])
 
 int _tmainPQ(int argc, _TCHAR* argv[])
 {
-	IndexMinPQ<double> ipq(NPQ);
+	IndexMinPQ<double> ipq;
+	ipq.IndexMinPQInit(NPQ);
 	ipq.insert(3, 0.4);
 	ipq.print();
 	ipq.insert(0, 0.5);

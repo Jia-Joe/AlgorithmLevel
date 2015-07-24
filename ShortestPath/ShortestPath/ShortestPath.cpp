@@ -4,11 +4,25 @@
 #include "stdafx.h"
 
 
-int _tmain2(int argc, _TCHAR* argv[])
+int _tmain(int argc, _TCHAR* argv[])
 {
-	double a = INF;
-	if (a<INFINITY)
-	cout << "INF" << endl;
+	EdgeWeightedDigraph g(8);
+	int E;
+	cin >> E;
+	for (int i = 0; i < E; i++)
+	{
+		int v, w;
+		double we;
+		cin >> v >> w >> we;
+		Edge e(v, w, we);
+		g.addEdge(e);
+	}
+	g.print();
+	cout <<endl<< "The Shortest Paths:" << endl;
+	DijkstraSP dsp(g, 0);
+	for (int i = 0; i < g.Vget(); i++)
+		dsp.printPathTo(i);
+
 	system("pause");
 	return 0;
 }

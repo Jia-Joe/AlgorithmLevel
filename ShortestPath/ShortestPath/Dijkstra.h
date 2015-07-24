@@ -4,6 +4,7 @@
 class DijkstraSP
 {
 private:
+	int s;
 	vector<Edge> edgeTo;
 	vector<double> disTo;
 	IndexMinPQ<double> pq;
@@ -15,7 +16,7 @@ private:
 			if (disTo[v] + e.weightGet() < disTo[w])
 			{
 				disTo[w] = disTo[v] + e.weightGet();
-				edgeTo.push_back(e);
+				edgeTo[w] = e ;
 				if (pq.contains(w))
 					pq.change(w, disTo[w]);
 				else
@@ -26,6 +27,7 @@ private:
 public:
 	DijkstraSP(EdgeWeightedDigraph &G, int s)
 	{
+		this->s = s;
 		pq.IndexMinPQInit(G.Vget());
 		for (int i = 0; i < G.Vget(); i++)
 		{
@@ -34,6 +36,8 @@ public:
 			disTo.push_back(INF);
 		}
 		disTo[s] = 0.0;
+		Edge e0(s, s, 0.0);
+		edgeTo[0] = e0;
 		pq.insert(0, 0.0);
 		while (!pq.isEmpty())
 			relax(G, pq.delMin());
@@ -44,7 +48,7 @@ public:
 	}
 	bool hasPathTo(int v)
 	{
-		return !disTo[v] == INF;
+		return !(disTo[v] == INF);
 	}
 	void printPathTo(int v)
 	{
@@ -52,10 +56,26 @@ public:
 			cout << "No path to " << v << endl;
 		else
 		{
-			cout << "<V" << v << ">";
-			for (Edge x = edgeTo[v]; x.weightGet != 0.0; x = edgeTo[x.from()])
+			cout << "[V" << s << "->V" << v << " (" << setw(4) << disTo[v] << setw(3) << ")] " << s;
+			stack<int> path;
+			int x = v;
+			do
 			{
-				cout << "<--" << x.from() << '[' << x.weightGet() << ']';
+				path.push(x);
+				x = edgeTo[x].from();
+			} while (edgeTo[x].to() != s);
+			//for (int x = v; edgeTo[x].from() != s; x = edgeTo[x].to())
+			//{
+			//	cout << x << '[' << edgeTo[x].weightGet() << ']' << "<--";
+			//}
+			int pathSize = path.size();
+			if (v != s)
+			{
+				for (int i = 0; i < pathSize; i++)
+				{
+					cout << "-->" << path.top();
+					path.pop();
+				}
 			}
 			cout << endl;
 		}
