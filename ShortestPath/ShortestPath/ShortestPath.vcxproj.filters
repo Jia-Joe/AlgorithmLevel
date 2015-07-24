@@ -65,5 +65,8 @@
     <ClCompile Include="testTopoSort.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="AcyclicSP.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

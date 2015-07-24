@@ -89,6 +89,7 @@
     <ClInclude Include="Topological.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="AcyclicSP.cpp" />
     <ClCompile Include="DijkstraAllPairSP.cpp" />
     <ClCompile Include="EdgeWeightedDigraph.cpp" />
     <ClCompile Include="relax.cpp" />
