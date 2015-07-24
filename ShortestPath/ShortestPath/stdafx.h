@@ -26,5 +26,8 @@ using namespace std;
 #include "relax.h"
 #include "IndexMinPQ.h"
 #include "Dijkstra.h"
+#include "Topological.h"
+#include "AcyclicSP.h"
+
 
 // TODO:  在此处引用程序需要的其他头文件

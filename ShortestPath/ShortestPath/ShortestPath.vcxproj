@@ -79,12 +79,14 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AcyclicSP.h" />
     <ClInclude Include="Dijkstra.h" />
     <ClInclude Include="EdgeWeightedDigraph.h" />
     <ClInclude Include="IndexMinPQ.h" />
     <ClInclude Include="relax.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="Topological.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DijkstraAllPairSP.cpp" />
@@ -96,6 +98,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="testIndexMinPQ.cpp" />
+    <ClCompile Include="testTopoSort.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
