@@ -4,7 +4,7 @@
 #include "stdafx.h"
 
 
-int _tmain(int argc, _TCHAR* argv[])
+int _tmainDijkSP(int argc, _TCHAR* argv[])
 {
 	EdgeWeightedDigraph g(8);
 	int E;

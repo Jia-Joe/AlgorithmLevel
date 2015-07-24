@@ -87,6 +87,7 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="DijkstraAllPairSP.cpp" />
     <ClCompile Include="EdgeWeightedDigraph.cpp" />
     <ClCompile Include="relax.cpp" />
     <ClCompile Include="ShortestPath.cpp" />

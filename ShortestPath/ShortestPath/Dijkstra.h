@@ -37,8 +37,8 @@ public:
 		}
 		disTo[s] = 0.0;
 		Edge e0(s, s, 0.0);
-		edgeTo[0] = e0;
-		pq.insert(0, 0.0);
+		edgeTo[s] = e0;
+		pq.insert(s, 0.0);
 		while (!pq.isEmpty())
 			relax(G, pq.delMin());
 	}
@@ -80,5 +80,30 @@ public:
 			cout << endl;
 		}
 
+	}
+};
+
+class DijkstraAllPairSP
+{
+private:
+	int V;
+	vector<DijkstraSP> all;
+public:
+	DijkstraAllPairSP(EdgeWeightedDigraph &G)
+	{
+		V = G.Vget();
+		for (int vp = 0; vp < G.Vget(); vp++)
+		{
+			DijkstraSP tmpSP(G, vp);
+			all.push_back(tmpSP);
+		}
+	}
+	double distPair(int s, int t)
+	{
+		return all[s].disToV(t);
+	}
+	void printPath(int s, int t)
+	{
+		all[s].printPathTo(t);
 	}
 };
