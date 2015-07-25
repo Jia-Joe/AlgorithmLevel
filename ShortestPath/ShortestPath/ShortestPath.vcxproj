@@ -81,6 +81,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AcyclicSP.h" />
+    <ClInclude Include="BellmanFord.h" />
     <ClInclude Include="Dijkstra.h" />
     <ClInclude Include="EdgeWeightedDigraph.h" />
     <ClInclude Include="IndexMinPQ.h" />
@@ -92,6 +93,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AcyclicSP.cpp" />
+    <ClCompile Include="BellmanFord.cpp" />
     <ClCompile Include="DijkstraAllPairSP.cpp" />
     <ClCompile Include="EdgeWeightedDigraph.cpp" />
     <ClCompile Include="ParallelTaskScheduling.cpp" />

@@ -2,7 +2,7 @@
 
 
 //优先级限制条件下并行任务调度的关键路径方法
-int _tmain12(int argc, _TCHAR* argv[])
+int _tmain(int argc, _TCHAR* argv[])
 {
 	int n;
 	cin >> n;//输入任务总数
@@ -10,7 +10,7 @@ int _tmain12(int argc, _TCHAR* argv[])
 	vector<double> weight;
 	vector<int> ntask;
 	//每个任务k都有两个顶点Vsk->Vtk，顶点号k,k+n,权重为时长
-	EdgeWeightedDigraph g(2*n+2);
+	EdgeWeightedDigraph g(2 * n + 2);
 	for (int i = 0; i < n; i++)
 	{
 		Edge es(s, i, 0.0), et(i + n, t, 0.0);
@@ -24,14 +24,14 @@ int _tmain12(int argc, _TCHAR* argv[])
 			if (getWeight)
 			{
 				getWeight = false;
-				scanf_s("%lf",&we);
-				Edge eTask(i, i+n, -we);
+				scanf_s("%lf", &we);
+				Edge eTask(i, i + n, -we);
 				g.addEdge(eTask);
 			}
 			else
 			{
 				scanf_s("%d", &task);
-				Edge eTask(i+n,task,0.0);
+				Edge eTask(i + n, task, 0.0);
 				g.addEdge(eTask);
 			}
 			if (getchar() == '\n')
@@ -43,10 +43,10 @@ int _tmain12(int argc, _TCHAR* argv[])
 	for (int i = 0; i < n; i++)
 	{
 		int k = -nlp.disToV(i);
-		printf("Task%d Time:%d\n",i,k);
+		printf("Task%d Time:%d\n", i, k);
 	}
-	int ftime=-nlp.disToV(t);
-	printf("Finish time:%d\n",ftime);
+	int ftime = -nlp.disToV(t);
+	printf("Finish time:%d\n", ftime);
 	system("pause");
 	return 0;
 }
