@@ -1,7 +1,47 @@
 #include "stdafx.h"
 
+BellmanFordSP::BellmanFordSP(EdgeWeightedDigraph &G, int s)
+{
 
-//优先级限制条件下并行任务调度的关键路径方法
+}
+void BellmanFordSP::relax(EdgeWeightedDigraph &G, int v)
+{
+	for (Edge e : G.adjGet(v))
+	{
+		int w = e.to();
+		if (distTo[w] > distTo[v] + e.weightGet())
+		{
+			distTo[w]=distTo[v] + e.weightGet();
+			edgeTo[w] = e;
+			if (!onQ[w])
+			{
+				queue.push(w);
+				onQ[w] = true;
+			}
+			if (cost++%G.Vget() == 0)
+				findNegativeCycle();
+		}
+	}
+}
+void BellmanFordSP::findNegativeCycle()
+{
+
+}
+bool BellmanFordSP::hasNegtiveCycle()
+{
+
+}
+vector<Edge> BellmanFordSP::negtiveCycle()
+{
+
+}
+
+void BellmanFordSP::printPathTo(int v)
+{
+
+}
+
+
 int _tmain(int argc, _TCHAR* argv[])
 {
 	int n;

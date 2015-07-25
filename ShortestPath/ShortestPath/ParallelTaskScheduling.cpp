@@ -2,7 +2,7 @@
 
 
 //优先级限制条件下并行任务调度的关键路径方法
-int _tmain12(int argc, _TCHAR* argv[])
+int _tmainPTS(int argc, _TCHAR* argv[])
 {
 	int n;
 	cin >> n;//输入任务总数
