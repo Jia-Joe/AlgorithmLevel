@@ -7,19 +7,20 @@
 class BellmanFordSP
 {
 private:
+	int s;
 	vector<double> distTo;
 	vector<Edge> edgeTo;
 	vector<bool> onQ;
 	queue<int> queue;
 	int cost;//relax调用次数
-	vector<Edge> cycle;
+	vector<int> cycle;
 
 	void relax(EdgeWeightedDigraph &G, int v);
 	void findNegativeCycle();
 public:
 	BellmanFordSP(EdgeWeightedDigraph &G, int s);
 	bool hasNegtiveCycle();
-	vector<Edge> negtiveCycle();
+	vector<int> negtiveCycle();
 
 	double disToV(int v)
 	{

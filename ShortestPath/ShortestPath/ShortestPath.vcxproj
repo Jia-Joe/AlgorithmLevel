@@ -84,6 +84,7 @@
     <ClInclude Include="BellmanFord.h" />
     <ClInclude Include="Dijkstra.h" />
     <ClInclude Include="EdgeWeightedDigraph.h" />
+    <ClInclude Include="FindCycle.h" />
     <ClInclude Include="IndexMinPQ.h" />
     <ClInclude Include="relax.h" />
     <ClInclude Include="resource.h" />
@@ -96,6 +97,7 @@
     <ClCompile Include="BellmanFord.cpp" />
     <ClCompile Include="DijkstraAllPairSP.cpp" />
     <ClCompile Include="EdgeWeightedDigraph.cpp" />
+    <ClCompile Include="FindCycle.cpp" />
     <ClCompile Include="ParallelTaskScheduling.cpp" />
     <ClCompile Include="relax.cpp" />
     <ClCompile Include="ShortestPath.cpp" />

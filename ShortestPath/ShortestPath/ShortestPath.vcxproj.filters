@@ -49,6 +49,9 @@
     <ClInclude Include="BellmanFord.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="FindCycle.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -72,13 +75,16 @@
     <ClCompile Include="testTopoSort.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="AcyclicSP.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="ParallelTaskScheduling.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="BellmanFord.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FindCycle.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="AcyclicSP.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
