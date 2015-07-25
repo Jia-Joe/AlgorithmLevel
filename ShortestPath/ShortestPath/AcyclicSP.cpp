@@ -2,7 +2,7 @@
 #include "stdafx.h"
 
 
-int _tmain(int argc, _TCHAR* argv[])
+int _tmainASP(int argc, _TCHAR* argv[])
 {
 	EdgeWeightedDigraph g(8);
 	int E;

@@ -1,7 +1,8 @@
 #pragma once
 #include "stdafx.h"
 
-//有向无环图
+//拓扑排序：有向无环图中的最优算法，可以处理负权边
+//若求最长路径，可以将权值变为负值，再求最短路径
 class AcyclicSP
 {
 private:

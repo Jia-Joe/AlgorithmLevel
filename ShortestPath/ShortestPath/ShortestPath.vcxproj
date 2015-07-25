@@ -77,6 +77,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />
+    <Text Include="ReadMe2.txt" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AcyclicSP.h" />
@@ -84,6 +85,7 @@
     <ClInclude Include="EdgeWeightedDigraph.h" />
     <ClInclude Include="IndexMinPQ.h" />
     <ClInclude Include="relax.h" />
+    <ClInclude Include="resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="Topological.h" />
@@ -92,6 +94,7 @@
     <ClCompile Include="AcyclicSP.cpp" />
     <ClCompile Include="DijkstraAllPairSP.cpp" />
     <ClCompile Include="EdgeWeightedDigraph.cpp" />
+    <ClCompile Include="ParallelTaskScheduling.cpp" />
     <ClCompile Include="relax.cpp" />
     <ClCompile Include="ShortestPath.cpp" />
     <ClCompile Include="stdafx.cpp">
