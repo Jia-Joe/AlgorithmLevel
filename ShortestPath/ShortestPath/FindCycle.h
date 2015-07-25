@@ -1,6 +1,8 @@
 #pragma once
 #include "stdafx.h"
 
+#include "EdgeWeightedDigraph.h"
+
 class FindCycle
 {
 private:

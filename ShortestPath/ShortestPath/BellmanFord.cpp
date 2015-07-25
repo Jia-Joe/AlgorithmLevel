@@ -1,5 +1,9 @@
 #include "stdafx.h"
 
+
+#include "BellmanFord.h"
+
+
 BellmanFordSP::BellmanFordSP(EdgeWeightedDigraph &G, int s)
 {
 	this->s = s;

@@ -3,6 +3,7 @@
 
 #include "stdafx.h"
 
+#include "Dijkstra.h"
 
 int _tmainDijkSP(int argc, _TCHAR* argv[])
 {

@@ -1,5 +1,6 @@
 #include "stdafx.h"
 
+#include "Dijkstra.h"
 
 int _tmainDijkPair(int argc, _TCHAR* argv[])
 {

@@ -1,6 +1,7 @@
 #pragma once
 #include "stdafx.h"
 
+#include "EdgeWeightedDigraph.h"
 
 //╠ъ╣дкиЁз
 void relax(Edge &e);

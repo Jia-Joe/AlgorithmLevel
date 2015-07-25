@@ -1,5 +1,8 @@
 #include "stdafx.h"
 
+#include "Topological.h"
+
+
 int _tmainTS(int argc, _TCHAR* argv[])
 {
 	EdgeWeightedDigraph g(8);

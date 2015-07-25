@@ -1,5 +1,7 @@
 #include "stdafx.h"
 
+#include "EdgeWeightedDigraph.h"
+
 #define N 8
 
 int _tmain1(int argc, _TCHAR* argv[])

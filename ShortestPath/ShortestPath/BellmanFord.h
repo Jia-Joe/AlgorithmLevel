@@ -1,6 +1,8 @@
 #pragma once
 #include "stdafx.h"
 
+#include "EdgeWeightedDigraph.h"
+#include "FindCycle.h"
 //假设起点s无法到达负权环，distTo[s]初始化为0，其余INF,以任意顺序放松有向图的所有边，重复V轮
 //归纳法证明，v0->v1->...->vk,第i轮放松，得到s到vi的最短路径，k不会大于V-1
 

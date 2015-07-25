@@ -1,5 +1,7 @@
 #include "stdafx.h"
 
+#include "FindCycle.h"
+
 #define N 8
 
 int _tmainCy(int argc, _TCHAR* argv[])

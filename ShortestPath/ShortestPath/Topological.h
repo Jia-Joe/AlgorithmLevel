@@ -1,6 +1,7 @@
 #pragma once
 #include "stdafx.h"
 
+#include "EdgeWeightedDigraph.h"
 /********************************************************************
 基于DFS的顶点排序：
 前序：递归之前将顶点加入队列pre()

@@ -1,5 +1,6 @@
 #include "stdafx.h"
 
+#include "AcyclicSP.h"
 
 //优先级限制条件下并行任务调度的关键路径方法
 int _tmainPTS(int argc, _TCHAR* argv[])
