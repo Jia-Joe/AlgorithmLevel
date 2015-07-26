@@ -8,7 +8,8 @@ int _tmain(int argc, _TCHAR* argv[])
 {
 	int N;
 	cin >> N;
-	UFquickunion uf(N);
+	weightedUF uf(N);
+//	UFquickunion uf(N);
 //	UFquickfind uf(N);
 	while (true)
 	{
