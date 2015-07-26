@@ -7,17 +7,14 @@
 
 #include "targetver.h"
 #include <vector>
-#include <string>
 #include <list> 
-#include <string>
 #include <iostream>
 #include <queue>
 #include <stack>
-#include <set>
-#include <map>
 #include <iomanip>
 #include <stdio.h>
 #include <tchar.h>
+#include <math.h>
 
 using namespace std;
 
