@@ -16,6 +16,7 @@
 #include <tchar.h>
 #include <math.h>
 
+#define INF 9999999.9
 using namespace std;
 
 

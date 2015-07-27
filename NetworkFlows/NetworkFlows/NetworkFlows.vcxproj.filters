@@ -33,6 +33,9 @@
     <ClInclude Include="MaxFlowFun.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="FordFulkerson.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">

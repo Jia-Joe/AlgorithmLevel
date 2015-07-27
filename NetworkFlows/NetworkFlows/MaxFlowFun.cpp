@@ -34,7 +34,3 @@ bool isFeasible(FlowNetwork &G)
 	return true;
 }
 
-bool hasAugmentingPath(FlowNetwork &G, int s, int v)
-{
-	return true;
-}
