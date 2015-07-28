@@ -2,10 +2,27 @@
 //
 
 #include "stdafx.h"
-
+#include "FordFulkerson.h"
 
 int _tmain(int argc, _TCHAR* argv[])
 {
+	FlowNetwork g(6);
+	int E;
+	cin >> E;
+	for (int i = 0; i < E; i++)
+	{
+		int v, w;
+		double we;
+		cin >> v >> w >> we;
+		FlowEdge eIn(v, w, we);
+		g.addEdge(eIn);
+	}
+	g.print();
+	FordFulkerson maxflow(g, 0, 5);
+	cout << endl << "Max flow value:" << maxflow.valueGet()<<endl;
+
+
+
 	system("pause");
 	return 0;
 }

@@ -8,10 +8,12 @@ class FordFulkerson
 private:
 	vector<bool> marked;//剩余网络中是否存在s到v的路径
 	vector<FlowEdge> edgeTo;//从s到v的最短路径上最后一条边
-	double value;//当前最大流量
+	double value=0.0;//当前最大流量
 
 	bool hasAugmentingPath(FlowNetwork &G, int s, int t)
 	{
+		for (int i = 0; i < G.Vget(); i++)
+			marked[i] = false;
 		marked[s] = true;
 		queue<int> q;
 		q.push(s);
@@ -52,11 +54,13 @@ public:
 			}
 			//增大流量
 			for (int v = t; v != s; v = edgeTo[v].other(v))
-				edgeTo[v].addResidualFlowTo(v, bottle);
+			{
+				G.addResidualFlowTo(edgeTo[v], v, bottle);
+			}
+
 			value += bottle;
 		}
 	}
 	double valueGet(){ return value; }
 	bool inCut(int v){ return marked[v]; }
-	
 };

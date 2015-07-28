@@ -7,7 +7,7 @@ private:
 	int v;//边的起点
 	int w;//边的终点
 	double capacity;
-	double flow;
+	double flow=0.0;
 public:
 	FlowEdge(int v, int w, double capacity)
 	{
@@ -38,16 +38,13 @@ public:
 			}
 		//throw new RuntimeException("Inconsistent Edge");
 	}
-	//v的流量增加delta
-	void addResidualFlowTo(int ver, double delta)
+	void flowAdd(double delta)
 	{
-		if (ver == v) flow -= delta;
-		else if (ver == w) flow += delta;
-		else
-		{
-			runtime_error err("Inconsistent Edge");
-			throw err;
-		}
+		flow = flow + delta; 
+	}
+	void flowReduce(double delta)
+	{
+		flow = flow - delta; 
 	}
 	void printFlowEdge()
 	{
