@@ -14,9 +14,9 @@ Level 2
 
 	Basic sorting, searching and data traversal and retrieval algorithms. 
 	
-	Be able to interpret and use arrays, lists, dictionaries, etc., and can be used for actual 
+	Be able to interpret and use arrays, lists, dictionaries, etc., and can be used for 
 	
-	programming tasks.
+	actual programming tasks.
 
 
 
@@ -26,9 +26,9 @@ Level 3
 	
 	Can appropriately understand their meaning to some extent.
 	
-	Know about the compromise between space and time in the basic data structure such as arrays 
+	Know about the compromise between space and time in the basic data structure such 
 	
-	vs chain.
+	as arrays vs chain.
 	
 	Be able to explain how to achieve the hash table and dealing with conflicts.
 	
