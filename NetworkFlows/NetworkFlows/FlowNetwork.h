@@ -26,38 +26,72 @@ public:
 	{
 		int v = e.from(),w = e.to();
 		list<FlowEdge>::iterator it;
-		for (it = adj[v].begin(); it != adj[v].end();it++)
+
+		for (it = adj[w].begin(); it != adj[w].end(); it++)
+		{
+			if (it->from() == v)
+			{
+				if (ver == w)
+					it->flowAdd(delta);
+				else if (ver == v)
+					it->flowReduce(delta);
+			}
+		}
+		for (it = adj[v].begin(); it != adj[v].end(); it++)
 		{
 			if (it->to() == w)
 			{
-				if (ver == e.from())
-				{
-					it->flowReduce(delta);
-					e.flowReduce(delta);
-				}
-				else if (ver == e.to())
-				{
+				if (ver == w)
 					it->flowAdd(delta);
-					e.flowAdd(delta);
-				}
-				else
-				{
-					runtime_error err("Inconsistent Edge");
-					throw err;
-				}
-				return;
+				else if (ver == v)
+					it->flowReduce(delta);
 			}
 		}
-		//if (ver == e.from())
-		//	e.flowReduce(delta);
-		//else if (ver == e.to())
-		//	e.flowAdd(delta);
+
+
+		//需要判断增广路径的边是正向还是逆向
+		//if (ver == w)
+		//{
+		//	for (it = adj[v].begin(); it != adj[v].end(); it++)
+		//	{
+		//		if (it->to() == w)
+		//		{
+		//			it->flowAdd(delta);
+		//		}
+		//	}
+		//	for (it = adj[w].begin(); it != adj[w].end(); it++)
+		//	{
+		//		if (it->from() == v)
+		//		{
+		//			it->flowAdd(delta);
+		//		}
+		//	}
+		//}
+		//else if (ver==v)
+		//{
+		//	for (it = adj[w].begin(); it != adj[w].end(); it++)
+		//	{
+		//		if (it->from() == v)
+		//		{
+		//			it->flowReduce(delta);
+		//		}
+		//	}
+		//	for (it = adj[v].begin(); it != adj[v].end(); it++)
+		//	{
+		//		if (it->to() == w)
+		//		{
+		//			it->flowReduce(delta);
+		//		}
+		//	}
+		//}
+
 
 	}
 	void addEdge(FlowEdge e)
 	{
 		//不同于无向图
 		adj[e.from()].push_back(e);
+//		adj[e.from()].back().flowSet(e.capacityGet());
 		adj[e.to()].push_back(e);
 		E++;
 	}
@@ -71,7 +105,8 @@ public:
 		{
 			for (FlowEdge e : adjGet(v))
 			{
-				alledge.push_back(e);
+				if (e.from()<v)
+					alledge.push_back(e);
 			}
 		}
 		return alledge;

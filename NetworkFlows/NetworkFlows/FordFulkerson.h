@@ -25,6 +25,7 @@ private:
 			{
 				int w = e.other(v);
 				if (e.residualCapacityTo(w)>0&&!marked[w])
+//				if (e.flowGet()>0 && !marked[w])
 				{
 					edgeTo[w] = e;
 					marked[w] = true;
@@ -53,9 +54,9 @@ public:
 					bottle = edgeTo[v].residualCapacityTo(v);
 			}
 			//增大流量
-			for (int v = t; v != s; v = edgeTo[v].other(v))
+			for (int x = t; x != s; x = edgeTo[x].other(x))
 			{
-				G.addResidualFlowTo(edgeTo[v], v, bottle);
+				G.addResidualFlowTo(edgeTo[x], x, bottle);
 			}
 
 			value += bottle;

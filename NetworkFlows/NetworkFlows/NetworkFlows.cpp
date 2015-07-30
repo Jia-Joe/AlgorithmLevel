@@ -19,6 +19,9 @@ int _tmain(int argc, _TCHAR* argv[])
 	}
 	g.print();
 	FordFulkerson maxflow(g, 0, 5);
+	cout << endl;
+	for (FlowEdge e : g.allEdge())
+		cout << e.from() << "-->" << e.to() << " capacity:" << e.capacityGet() << " flow:" << e.flowGet()<<endl;
 	cout << endl << "Max flow value:" << maxflow.valueGet()<<endl;
 
 

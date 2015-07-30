@@ -38,6 +38,10 @@ public:
 			}
 		//throw new RuntimeException("Inconsistent Edge");
 	}
+	void flowSet(double f)
+	{
+		flow = f;
+	}
 	void flowAdd(double delta)
 	{
 		flow = flow + delta; 
