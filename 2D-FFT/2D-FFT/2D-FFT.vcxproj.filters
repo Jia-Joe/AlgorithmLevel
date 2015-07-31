@@ -21,6 +21,12 @@
     <ClCompile Include="DIF.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="ComplexNumTest.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="ComplexNumOperation.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ComplexNumOperation.h">

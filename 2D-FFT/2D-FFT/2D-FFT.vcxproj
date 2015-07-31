@@ -64,6 +64,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="ComplexNumOperation.c" />
+    <ClCompile Include="ComplexNumTest.c" />
     <ClCompile Include="DIF.c" />
     <ClCompile Include="DIT.c" />
   </ItemGroup>
