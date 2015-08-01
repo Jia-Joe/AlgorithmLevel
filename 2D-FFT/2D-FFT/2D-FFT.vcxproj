@@ -69,9 +69,14 @@
     <ClCompile Include="ComplexNumTest.c" />
     <ClCompile Include="DIF.c" />
     <ClCompile Include="DIT.c" />
+    <ClCompile Include="FFT.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ComplexNumOperation.h" />
+    <ClInclude Include="FFT.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
