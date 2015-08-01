@@ -1,3 +1,4 @@
+//Decimation in frequency
 #include <stdio.h>
 #include "ComplexNumOperation.h"
 //#include <complex.h>

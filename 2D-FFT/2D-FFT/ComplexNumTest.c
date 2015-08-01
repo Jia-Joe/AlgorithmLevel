@@ -3,7 +3,7 @@
 //#include <complex.h>
 
 
-int main()
+int main8()
 {
 	//_Dcomplex cx=_Cbuild(3.0, 4.0);
 	//double w = cabs(cx);
@@ -14,7 +14,7 @@ int main()
 	ecomplex ex = { 2.8, 3.3 };
 	ixprint(cx);
 	exprint(ex);
-
+	
 	getchar();
 	return 0;
 }
