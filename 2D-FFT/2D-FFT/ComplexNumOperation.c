@@ -91,10 +91,10 @@ void exprint(ecomplex ex)
 #else
 void ixprint(icomplex ix)
 {
-	printf(" %f + j*%f ", ix.re, ix.im);
+	printf(" [%.2f]+j[%.2f] ", ix.re, ix.im);
 }
 void exprint(ecomplex ex)
 {
-	printf(" %fe^j*%f ", ex.r, ex.theta);
+	printf(" [%.2f]e^j*[%.2f] ", ex.r, ex.theta);
 }
 #endif

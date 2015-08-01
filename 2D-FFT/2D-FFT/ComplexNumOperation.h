@@ -4,8 +4,8 @@
 #define _COMPLEX_J_
 typedef struct
 {
-	double im;
 	double re;
+	double im;
 }icomplex;
 
 typedef struct
