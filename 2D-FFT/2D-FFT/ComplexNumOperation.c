@@ -1,6 +1,18 @@
 #include <stdio.h>
 #include "ComplexNumOperation.h"
 
+//复数构造函数
+icomplex ixcon(double a, double b)
+{
+	icomplex x = { a, b };
+	return x;
+}
+ecomplex excon(double a, double b)
+{
+	ecomplex x = { a, b };
+	return x;
+}
+
 double igetR(icomplex x)
 {
 	double a = x.re,b = x.im;

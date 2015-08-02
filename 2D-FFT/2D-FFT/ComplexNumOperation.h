@@ -2,6 +2,8 @@
 #include <math.h>
 
 #define _COMPLEX_J_
+const double PI = 3.141592653589793;
+
 typedef struct
 {
 	double re;
@@ -13,6 +15,9 @@ typedef struct
 	double r;
 	double theta;
 }ecomplex;
+
+icomplex ixcon(double a, double b);
+ecomplex excon(double a, double b);
 
 double igetR(icomplex x);
 double igetTheta(icomplex x);
