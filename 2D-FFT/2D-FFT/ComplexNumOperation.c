@@ -94,11 +94,11 @@ ecomplex ediv(ecomplex a, ecomplex b)
 #ifndef _COMPLEX_J_
 void ixprint(icomplex ix)
 {
-	printf(" %f + i*%f ", ix.re, ix.im);
+	printf(" %.2lf + i*%.2lf ", ix.re, ix.im);
 }
 void exprint(ecomplex ex)
 {
-	printf(" %fe^i*%f ", ex.r,ex.theta);
+	printf(" %.2lfe^i*%.2lf ", ex.r,ex.theta);
 }
 #else
 void ixprint(icomplex ix)
@@ -107,6 +107,6 @@ void ixprint(icomplex ix)
 }
 void exprint(ecomplex ex)
 {
-	printf(" [%.2f]e^j*[%.2f] ", ex.r, ex.theta);
+	printf(" [%.2lf]e^j*[%.2lf] ", ex.r, ex.theta);
 }
 #endif

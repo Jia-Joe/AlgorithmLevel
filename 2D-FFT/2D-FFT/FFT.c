@@ -34,17 +34,18 @@ void BitReverse(icomplex *before, icomplex *after, uint n, uint l)
 	}
 }
 
-void fft(icomplex *X, uint L)
+icomplex* fft(icomplex **X, uint L)
 {
+	//printf("%lf--%lf\n", (*X)[2].re, (*X)[2].im);
 	uint N = 1 << L;
-	uint N2=1, N1;
+	uint N2=1, N1;//N2=2*N1
 	icomplex U, T, W;//U=Wr
 	double tmp;
 	//计算第m级序列
 	for (uint m = 1; m <= L; m++)
 	{
-		N2 <<= 1;//N2为蝶形运算两节点的距离
-		N1 = N2 >> 1;
+		N1 = N2;//N2为蝶形运算两节点的距离
+		N2 <<= 1;
 		U = ixcon(1.0, 0);
 		tmp = PI / N1;
 		W = ixcon(cos(tmp), -sin(tmp));
@@ -52,12 +53,17 @@ void fft(icomplex *X, uint L)
 		{
 			for (uint i = k; i < N; i += N2)
 			{
-				uint ip = i + N2;
-				T = imul(X[ip], U);
-				X[ip] = iminus(X[i], T);
-				X[i] = iadd(X[i], T);
+				uint ip = i + N1;
+	//			printf("%lf--%lf\n", (*X)[ip].re, U.re);
+				T = imul((*X)[ip], U);
+
+				(*X)[ip] = iminus((*X)[i], T);
+				(*X)[i] = iadd((*X)[i], T);
 			}
 			U = imul(U, W);
 		}
+//		printf("%lf--%lf\n", (*X)[0].re, (*X)[0].im);
 	}
+
+	return *X;
 }

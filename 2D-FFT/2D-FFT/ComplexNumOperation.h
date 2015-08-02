@@ -2,7 +2,7 @@
 #include <math.h>
 
 #define _COMPLEX_J_
-const double PI = 3.141592653589793;
+#define PI  3.141592653589793
 
 typedef struct
 {
