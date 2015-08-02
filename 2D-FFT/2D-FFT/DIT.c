@@ -32,10 +32,8 @@ int main()
 		ixprint(arrayout[i]);
 		printf(" %d\n", i);
 	}
-	icomplex a = ixcon(11, 0), b = ixcon(22, 0), c = ixcon(33, 0), d = ixcon(44, 0);
-	icomplex arrayou[4];
-	arrayou[0] = a; arrayou[1] = b; arrayou[3] = c; arrayou[3] = d;
-	arrayout=fft(&arrayout, L);
+
+	fft(arrayout, L);
 	printf("FFT:\n");
 	for (uint i = 0; i < N; i++)
 	{
