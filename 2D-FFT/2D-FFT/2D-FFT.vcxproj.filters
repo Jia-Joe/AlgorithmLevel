@@ -33,6 +33,12 @@
     <ClCompile Include="IFFT.c">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="2D-FFT.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="2Dmalloc.c">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ComplexNumOperation.h">
@@ -42,6 +48,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="IFFT.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="2D-FFT.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

@@ -65,6 +65,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="2D-FFT.c" />
+    <ClCompile Include="2Dmalloc.c" />
     <ClCompile Include="ComplexNumOperation.c" />
     <ClCompile Include="ComplexNumTest.c" />
     <ClCompile Include="DIF.c" />
@@ -73,6 +75,7 @@
     <ClCompile Include="IFFT.c" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="2D-FFT.h" />
     <ClInclude Include="ComplexNumOperation.h" />
     <ClInclude Include="FFT.h" />
     <ClInclude Include="IFFT.h" />
