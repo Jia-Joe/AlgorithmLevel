@@ -11,4 +11,6 @@ uint bitr(uint x, uint n);
 void BitReverse(icomplex *before, icomplex *after, uint n, uint l);
 //icomplex* fft(icomplex *X, uint L);
 
-void fft(icomplex *X, uint L);
+icomplex* fft(icomplex *X, uint L);
+icomplex* pfft(icomplex *X, uint L);
+icomplex* ppfft(icomplex **X, uint L);

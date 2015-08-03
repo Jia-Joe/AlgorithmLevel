@@ -70,10 +70,12 @@
     <ClCompile Include="DIF.c" />
     <ClCompile Include="DIT.c" />
     <ClCompile Include="FFT.c" />
+    <ClCompile Include="IFFT.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ComplexNumOperation.h" />
     <ClInclude Include="FFT.h" />
+    <ClInclude Include="IFFT.h" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="ReadMe.txt" />

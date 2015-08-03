@@ -13,7 +13,8 @@ int main()
 	uint L = 0, N = getN(n, &L);
 	printf("%d,%d\n", N, L);
 	icomplex *arrayin = (icomplex*)malloc(sizeof(icomplex)*N);
-	icomplex *arrayout = (icomplex*)malloc(sizeof(icomplex)*N);
+//	icomplex *arrayout = (icomplex*)malloc(sizeof(icomplex)*N);
+	icomplex *arrayout;
 	for (uint i = 0; i < n; i++)
 	{
 		double tmp;
@@ -25,15 +26,15 @@ int main()
 	for (uint i = n; i < N; i++)
 		arrayin[i] = lfnull;
 
-	BitReverse(arrayin, arrayout, N, L);
-	//输出倒位序
-	for (uint i = 0; i < N; i++)
-	{
-		ixprint(arrayout[i]);
-		printf(" %d\n", i);
-	}
+	//BitReverse(arrayin, arrayout, N, L);
+	////输出倒位序
+	//for (uint i = 0; i < N; i++)
+	//{
+	//	ixprint(arrayout[i]);
+	//	printf(" %d\n", i);
+	//}
 
-	fft(arrayout, L);
+	arrayout=fft(arrayin, L);
 	printf("FFT:\n");
 	for (uint i = 0; i < N; i++)
 	{
