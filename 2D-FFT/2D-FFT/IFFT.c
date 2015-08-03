@@ -1,26 +1,45 @@
 #include "IFFT.h"
+#include <stdlib.h>
+#include <stdio.h>
 
 void conj(icomplex *X, uint n)
 {
-	for (int i = 0; i < n; i++)
+	for (uint i = 0; i < n; i++)
 	{
-		icomplex x = X[i];
-
+		X[i].im = -X[i].im;
 	}
 }
-void ifft(icomplex *X, uint L)
+icomplex* ifft(icomplex *X, uint L)
 {
-
+	uint N = 1 << L;
+	for (uint i = 0; i < N; i++)
+	{
+		X[i].im = -X[i].im;
+	}
+	icomplex *Y=fft(X,L);
+	for (uint i = 0; i < N; i++)
+	{
+		Y[i].im = -Y[i].im;
+	}
+	for (uint i = 0; i < N; i++)
+	{
+		Y[i].re /= N;
+		Y[i].im /= N;
+	}
+	return Y;
 }
 
-int main3()
+int main()
 {
-
-	//_Dcomplex cx=_Cbuild(3.0, 4.0);
-	//double w = cabs(cx);
-	//printf("\n\nThe conjugate of cx =  %.2f%",w);
-	double ax = sin(2);
-	printf("%.2f\n", ax);
+	icomplex a[4] = { { 6.0000, 0 }, { -1.0000, 1.0000 }, { -4.0000, 0 }, { -1.0000,-1.0000 } };
+	icomplex *arrayout = ifft(a, 2);
+	printf("IFFT:\n");
+	for (uint i = 0; i < 4; i++)
+	{
+		ixprint(arrayout[i]);
+		printf("\n");
+	}
+	free(arrayout);
 
 	getchar();
 	getchar();

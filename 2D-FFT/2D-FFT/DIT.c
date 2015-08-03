@@ -6,7 +6,7 @@
 
 
 
-int main()
+int maindit()
 {
 	uint n;
 	scanf("%d", &n);
