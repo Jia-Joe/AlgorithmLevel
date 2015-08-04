@@ -3,7 +3,7 @@
 //#include <complex.h>
 
 
-int main8()
+int mainX()
 {
 	//_Dcomplex cx=_Cbuild(3.0, 4.0);
 	//double w = cabs(cx);

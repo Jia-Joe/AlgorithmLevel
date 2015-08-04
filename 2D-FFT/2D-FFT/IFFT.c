@@ -29,7 +29,7 @@ icomplex* ifft(icomplex *X, uint L)
 	return Y;
 }
 
-int main()
+int mainIFFT()
 {
 	icomplex a[4] = { { 6.0000, 0 }, { -1.0000, 1.0000 }, { -4.0000, 0 }, { -1.0000,-1.0000 } };
 	icomplex *arrayout = ifft(a, 2);
