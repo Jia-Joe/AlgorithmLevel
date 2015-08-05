@@ -7,14 +7,14 @@
 icomplex* dif(icomplex *X, uint L)
 {
 	uint N = 1 << L;
-	uint N2 = N, N1;//N2=2*N1
+	uint N1 = N , N2;//N2=2*N1
 	icomplex U, T, W;//U=Wr
 	double tmp;
 
 	//计算第m级序列
 	for (uint m = 1; m <= L; m++)
 	{
-		N1 = N2;//N2为蝶形运算两节点的距离
+		N2 = N1;//N2为蝶形运算两节点的距离
 		N1 >>= 1;
 		U = ixcon(1.0, 0);
 		tmp = PI / N1;
@@ -33,7 +33,6 @@ icomplex* dif(icomplex *X, uint L)
 		}
 	}
 
-	//拷贝原序列
 	icomplex *Xout = (icomplex*)malloc(sizeof(icomplex)*N);
 	//求序列的倒位序	
 	for (uint i = 0; i < N; i++)
@@ -52,7 +51,7 @@ icomplex* dif(icomplex *X, uint L)
 	return Xout;
 }
 
-int main()
+int mainDIF()
 {
 	uint n;
 	scanf("%d", &n);
