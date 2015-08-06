@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main()
+int mainMalloc()
 {
 	int **a;
 	int m, n, i, k;
@@ -21,6 +21,10 @@ int main()
 		}
 		printf("\n");
 	}
+
+	for (i = 0; i<m; i++)
+		free(a[i]);
+	free(a);
 
 	getchar();
 	getchar();
