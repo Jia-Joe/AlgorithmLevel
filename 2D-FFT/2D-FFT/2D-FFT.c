@@ -20,7 +20,7 @@ icomplex** fft2d(icomplex **Xin, uint lgm, uint lgn)
 		icomplex* tmp = (icomplex*)malloc(m*sizeof(icomplex));
 		for (uint w = 0; w < m; w++)
 			tmp[w] = pp[w][k];
-		icomplex* out = fft(tmp, m);
+		icomplex* out = fft(tmp, lgm);
 		for (uint w = 0; w < m; w++)
 			pp[w][k] = out[w];
 		free(tmp);
@@ -40,6 +40,7 @@ int main()
 	for (int i = 0; i < m; i++)
 	for (int j = 0; j < n; j++)
 		scanf("%lf%lf", &arrayin[i][j].re, &arrayin[i][j].im);
+	printf("\nInput Matrix:\n");
 	for (int i = 0; i < m; i++)
 	{
 		for (int j = 0; j < n; j++)
@@ -49,6 +50,7 @@ int main()
 
 	uint lgm, lgn, M = getN(m, &lgm), N = getN(n, &lgn);
 	arrayout = fft2d(arrayin,lgm,lgn);
+	printf("\n2D-FFT:\n");
 	for (int i = 0; i < m; i++)
 	{
 		for (int j = 0; j < n; j++)
@@ -59,6 +61,8 @@ int main()
 	for (int i = 0; i<m; i++)
 		free(arrayin[i]);
 	free(arrayin);
+	for (int i = 0; i<m; i++)
+		free(arrayout[i]);
 	free(arrayout);
 	getchar();
 	getchar();
