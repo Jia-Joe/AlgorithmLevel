@@ -21,10 +21,10 @@ public:
 	//{//隐含this参数，所以参数过多，无法通过编译
 	//	return a.weightGet() < b.weightGet();
 	//}
-	//bool operator < (const Edge &a) const
-	//{
-	//	return a.weightGet() < this->weight;
-	//}
+	bool operator < (const Edge &a) const
+	{
+		return a.weightGet() < this->weight;
+	}
 	double weightGet() const
 	{
 		return weight;
@@ -86,12 +86,13 @@ public:
 			else
 				adj[vin].push_back(e);
 		}
-		//for (int i = 0; i < V; i++)
-		//{
-		//	Edge* Enull = new Edge();
-		//	Enull = nullptr;
-		//	adj[i].push_back(Enull);
-		//}
+		for (int i = 0; i < V; i++)
+		{
+			//Edge* Enull = new Edge();
+			//Enull = nullptr;
+			//adj[i].push_back(Enull);
+			adj[i].push_back(nullptr);
+		}
 	}
 	int Vget(){ return V; }
 	int Eget(){ return E; }
@@ -116,14 +117,12 @@ public:
 		{
 			list<Edge*>::iterator it;
 			for (it = adj[i].begin(); it != adj[i].end(); it++)
+			//for (it = adj[i].begin(); *it!=nullptr; it++)
 			{
 				//adj[i].remove(*it);
 				delete *it;
 				*it = 0;
 			}
-			//delete adj[i];
 		}
-
-
 	}
 };
