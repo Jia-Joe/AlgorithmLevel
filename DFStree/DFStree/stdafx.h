@@ -4,7 +4,11 @@
 //
 
 #pragma once
-
+//#ifdef _DEBUG  
+//#pragma comment(lib, "D:/Program Files/Visual Leak Detector/lib/Win32/vld.lib")  
+//#else  
+//#pragma comment(lib, "D:/Program Files/Visual Leak Detector/lib/Win32/vld.lib")  
+//#endif  
 #include "targetver.h"
 #include <vector>
 #include <string>
@@ -19,7 +23,7 @@
 #include <tchar.h>
 
 using namespace std;
-#include "Graph.h"
+
 
 
 
