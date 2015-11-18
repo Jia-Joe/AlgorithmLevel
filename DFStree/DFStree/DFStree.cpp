@@ -15,11 +15,15 @@
 
 #define VER 16
 bool marked[VER] = { false };
+int dfs_num[VER] = { 0 };
+int dfs_num_cnt = 1;
 
 void dfs(EdgeWeightedGraph &G, int v)
 {
 	marked[v] = true;
-	cout << v << " ";
+	//TODO:preWORK on v
+	dfs_num[v] = dfs_num_cnt;
+	dfs_num_cnt++;
 	for (Edge* e : G.adjGet(v))
 	{
 		if (e != nullptr)
@@ -27,7 +31,10 @@ void dfs(EdgeWeightedGraph &G, int v)
 			int w = e->other(v);
 			if (!marked[w])
 			{
+				cout << v << "-->" << w << endl;
 				dfs(G, w);
+				//TODO:postWORK for (v,w)
+				cout << "searchEND......."<<v << "-->" << w << endl;
 			}
 		}
 	}
@@ -39,29 +46,34 @@ int _tmain(int argc, _TCHAR* argv[])
 #ifdef _DEBUG
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);//ÍË³öÊ±¼ì²âÐ¹Â©
 #endif
-	//list<int> a = { 1, 2, 3 };
-	//int* p = new int;
-	//_CrtDumpMemoryLeaks();
-	//_CrtSetBreakAlloc(211);
-	//_CrtSetBreakAlloc(212);
-	//_CrtSetBreakAlloc(213);
-	//_CrtSetBreakAlloc(252);
-	//_CrtSetBreakAlloc(253);
-	//_CrtSetBreakAlloc(256);
-	//_CrtSetBreakAlloc(259);
-	//_CrtSetBreakAlloc(260);
-	//_CrtSetBreakAlloc(267);
-	//_CrtSetBreakAlloc(269);
-	//_CrtSetBreakAlloc(271);
-	//Ð¹Â©¼ì²â·ÅÔÚÎö¹¹º¯ÊýÄ©Î²
-	//EdgeWeightedGraph *G = new EdgeWeightedGraph(VER);
 
-	EdgeWeightedGraph G(VER);
-	G.input();
+	//EdgeWeightedGraph G(VER);
+	//G.input();
 
-	dfs(G, 0);
+	int aa = 1, bb = 2, cc = 3;
+	int *a = &aa, *b = &bb, *c = &cc;
+	list<int*> vp = { nullptr,a, b,c, nullptr };
+	vp.push_back(nullptr);
+	stack<int*> sp;
+	for (list<int*>::iterator it = vp.begin(); it != vp.end(); it++)
+	{
+		sp.push(*it);
+	}
+	while (!sp.empty())
+	{
+		//if (sp.top() == nullptr)
+		//	cout << -1;
+		//else
+			cout << sp.top()<<endl;
+		sp.pop();
+	}
+	//dfs(G, 0);
+	//for each (int num in dfs_num)
+	//{
+	//	cout << num << endl;
+	//}
 
-	//G->~EdgeWeightedGraph();
+
 	system("pause");
 	return 0;
 }
