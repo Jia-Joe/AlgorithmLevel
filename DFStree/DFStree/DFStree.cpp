@@ -41,56 +41,38 @@ void dfs(EdgeWeightedGraph &G, int v)
 }
 
 
-int _tmain(int argc, _TCHAR* argv[])
+int _tmain0(int argc, _TCHAR* argv[])
 {
 #ifdef _DEBUG
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);//ÍË³öÊ±¼ì²âÐ¹Â©
 #endif
 
-	//EdgeWeightedGraph G(VER);
-	//G.input();
-
-	int aa = 1, bb = 2, cc = 3;
-	int *a = &aa, *b = &bb, *c = &cc;
-	list<int*> vp = { nullptr,a, b,c, nullptr };
-	vp.push_back(nullptr);
-	stack<int*> sp;
-	for (list<int*>::iterator it = vp.begin(); it != vp.end(); it++)
+	EdgeWeightedGraph G(VER);
+	G.input();
+	dfs(G, 0);
+	for each (int num in dfs_num)
 	{
-		sp.push(*it);
+		cout << num << endl;
 	}
-	while (!sp.empty())
-	{
-		//if (sp.top() == nullptr)
-		//	cout << -1;
-		//else
-			cout << sp.top()<<endl;
-		sp.pop();
-	}
-	//dfs(G, 0);
-	//for each (int num in dfs_num)
+	//int aa = 1, bb = 2, cc = 3;
+	//int *a = &aa, *b = &bb, *c = &cc;
+	//list<int*> vp = { nullptr,a, b,c, nullptr };
+	//vp.push_back(nullptr);
+	//stack<int*> sp;
+	//for (list<int*>::iterator it = vp.begin(); it != vp.end(); it++)
 	//{
-	//	cout << num << endl;
+	//	sp.push(*it);
 	//}
-
+	//while (!sp.empty())
+	//{
+	//	//if (sp.top() == nullptr)
+	//	//	cout << -1;
+	//	//else
+	//		cout << sp.top()<<endl;
+	//	sp.pop();
+	//}
 
 	system("pause");
 	return 0;
 }
-//int parent = 0,child;
-//Edge e1 = G.adjGet(0).begin;
-//bool marked[VER] = { false };
 
-//stack<int> vst;
-//stack<Edge> est;
-//vst.push(parent);
-//est.push(e1);
-
-//while (!vst.empty())
-//{
-
-//	while ()
-//	{
-
-//	}
-//}

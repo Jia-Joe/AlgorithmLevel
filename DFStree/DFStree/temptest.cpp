@@ -27,9 +27,23 @@ private:
 	int m_count;
 };
 
-
-int _tmain1(int argc, _TCHAR* argv[])
+inline int spop(stack<int> &s)
 {
+	int x = s.top();
+	s.pop();
+	return x;
+}
+int _tmain2(int argc, _TCHAR* argv[])
+{
+	//#ifdef _DEBUG
+	//	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);//退出时检测泄漏
+	//#endif
+	stack<int> si;
+	si.push(1);
+	si.push(2);
+	si.push(3);
+	while (!si.empty())
+		cout << spop(si) << endl;
 
 	vector<int> dest = { 3, 4, 99, 6, 7, 8, 9 };
 
@@ -43,9 +57,9 @@ int _tmain1(int argc, _TCHAR* argv[])
 	vector<int>::iterator nthItr = find_if(dest.begin(), dest.end(), nth);  //dest内容为连续数字：3,4,5,6,……,12  
 	cout << "3rd:" << *nthItr << endl;
 	cout << "State:" << nth.GetCount() << endl; 
-	int *p = new int;
+	//int *p = new int;
 	system("pause");
-	_CrtDumpMemoryLeaks();
+	//_CrtDumpMemoryLeaks();
 	return 0;
 
 }
