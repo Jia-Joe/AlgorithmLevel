@@ -13,7 +13,7 @@
 #include<stdlib.h>  
 
 
-#define VER 16
+#define VER 6
 bool mark[VER] = { false };
 int dfsnum[VER] = { 0 };
 int dfsnum_cnt = 1;
@@ -69,7 +69,7 @@ int _tmain(int argc, _TCHAR* argv[])
 				mark[child] = true;
 				//TODO: preWORK on child
 				cout << parent << "  " << child << endl;
-				Edetect = G.adjGet(child)->NextEdge();//避开链表头结点-		est	{ size=1 }	std::stack<Edge *,std::deque<Edge *,std::allocator<Edge *> > >
+				Edetect = G.adjGet(child)->NextEdge();//避开链表头结点
 				parent = child;
 				child = Edetect->other(parent);
 				est.push(Edetect->NextEdge());
